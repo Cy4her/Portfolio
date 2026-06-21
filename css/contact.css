@@ -1,0 +1,74 @@
+.minimal-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.minimal-page::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 160px;
+  width: 240px;
+  height: 480px;
+  border-right: 1px solid rgba(0,0,0,0.14);
+  border-top: 1px solid rgba(0,0,0,0.14);
+  transform: skewY(8deg);
+}
+
+.page-title p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.9;
+  letter-spacing: 3px;
+}
+
+.watermark {
+  position: absolute;
+  left: 70px;
+  bottom: 45px;
+  width: 260px;
+  opacity: 0.045;
+}
+
+.contact-links {
+  width: min(520px, 82vw);
+  margin: 60px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-links a {
+  position: relative;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 600;
+  padding: 0 12px;
+  overflow: hidden;
+}
+
+.contact-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(36,107,255,0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+
+.contact-links a:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-links a:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}

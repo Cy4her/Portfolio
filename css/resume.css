@@ -1,0 +1,77 @@
+.resume-main {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-main::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 160px;
+  width: 240px;
+  height: 480px;
+  border-right: 1px solid rgba(0,0,0,0.14);
+  border-top: 1px solid rgba(0,0,0,0.14);
+  transform: skewY(8deg);
+}
+
+.resume-main .page-title p {
+  font-size: 17px;
+  color: #444;
+  line-height: 2;
+  letter-spacing: 3px;
+}
+
+.watermark {
+  position: absolute;
+  left: 70px;
+  bottom: 45px;
+  width: 260px;
+  opacity: 0.045;
+}
+
+.download-button {
+  position: relative;
+  width: min(520px, 82vw);
+  height: 76px;
+  margin: 60px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px;
+  border: 2px solid black;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 700;
+  clip-path: polygon(4% 0, 100% 0, 100% 72%, 96% 100%, 0 100%, 0 28%);
+  overflow: hidden;
+}
+
+.download-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(36,107,255,0.12);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.35s ease;
+  z-index: -1;
+}
+
+.download-button:hover::before {
+  transform: scaleX(1);
+}
+
+.download-button:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+  transform: translateY(-4px);
+}
+
+.resume-note {
+  text-align: center;
+  margin-top: 34px;
+  color: #777;
+  letter-spacing: 4px;
+}

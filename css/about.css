@@ -1,0 +1,100 @@
+.about-page {
+  background: #050505;
+  color: white;
+}
+
+.about-hero {
+  min-height: 100vh;
+  padding-top: 130px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.82) 38%, rgba(0,0,0,0.35)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=80");
+  background-size: cover;
+  background-position: center right;
+}
+
+.about-text {
+  max-width: 650px;
+  padding: 80px 0 60px 7.5%;
+}
+
+.about-label,
+.focus-label {
+  position: relative;
+  padding-left: 48px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 13px;
+  margin-bottom: 34px;
+}
+
+.about-label::before,
+.focus-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 36px;
+  height: 1px;
+  background: white;
+}
+
+.about-text h2 {
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.1;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.about-text h2 span {
+  color: rgba(255,255,255,0.55);
+}
+
+.about-text p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 26px;
+}
+
+.focus-section {
+  padding: 20px 7.5% 80px;
+  background: rgba(0,0,0,0.72);
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+  margin-top: 40px;
+}
+
+.focus-grid article {
+  border-left: 1px solid rgba(255,255,255,0.18);
+  padding-left: 40px;
+}
+
+.icon {
+  font-size: 38px;
+  margin-bottom: 24px;
+}
+
+.focus-grid h3 {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.focus-grid p {
+  color: rgba(255,255,255,0.68);
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text {
+    padding: 180px 28px 40px;
+  }
+}

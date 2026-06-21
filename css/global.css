@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --black: #050505;
+  --white: #ffffff;
+  --gray: #777;
+  --line: rgba(0, 0, 0, 0.18);
+  --gold: #d99a32;
+  --blue: #246bff;
+  --red: #d83333;
+  --purple: #6f35d9;
+  --orange: #f08a24;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-family: "Inter", sans-serif;
+  background: var(--white);
+  color: var(--black);
+}
+
+/* Page fade transition */
+body {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a, button {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 112px;
+  padding: 30px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 360px;
+}
+
+.brand img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand h1 {
+  font-size: 24px;
+  letter-spacing: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.brand p {
+  margin-top: 7px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  white-space: nowrap;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(28px, 4vw, 54px);
+  white-space: nowrap;
+}
+
+.navbar nav a {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: 0.3s ease;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+  width: 100%;
+}
+
+.nav-dark {
+  color: white;
+}
+
+.nav-light {
+  color: black;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease;
+}
+
+.page-title {
+  text-align: center;
+  padding-top: 190px;
+}
+
+.page-title h2 {
+  font-size: 38px;
+  letter-spacing: 18px;
+  font-weight: 700;
+}
+
+.title-line {
+  width: 48px;
+  height: 2px;
+  background: currentColor;
+  margin: 28px auto;
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    height: auto;
+    padding: 24px;
+    align-items: flex-start;
+  }
+
+  .brand h1,
+  .brand p {
+    display: none;
+  }
+
+  .navbar nav {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .navbar nav a {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+}
+
