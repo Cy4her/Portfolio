@@ -186,3 +186,66 @@
     justify-content: flex-start;
   }
 }
+
+@media (max-width: 1100px) {
+  main {
+    padding-top: 125px !important;
+  }
+
+  h2 {
+    letter-spacing: 10px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  main {
+    padding: 110px 6vw 65px !important;
+  }
+
+  h2 {
+    font-size: 34px !important;
+    letter-spacing: 7px !important;
+    line-height: 1.15 !important;
+  }
+
+  .back-link {
+    margin-bottom: 40px !important;
+    font-size: 12px !important;
+  }
+
+  .section-label {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .ee-item,
+  .cs-item,
+  .track-item,
+  .model-item,
+  .art-card {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .ee-actions,
+  .cs-actions,
+  .track-actions,
+  .model-meta,
+  .track-meta,
+  .cs-meta {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  .ee-actions a,
+  .cs-actions a,
+  .track-actions a,
+  .model-button {
+    width: 100%;
+    min-height: 44px;
+  }
+}

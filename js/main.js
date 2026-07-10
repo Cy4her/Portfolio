@@ -1,16 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  requestAnimationFrame(() => {
-    document.body.classList.add("loaded");
-  });
+  document.body.classList.add("loaded");
 
   const navbar = document.querySelector(".navbar");
 
-  if (navbar) {
+  if (navbar && !navbar.querySelector(".menu-toggle")) {
     const toggle = document.createElement("button");
     toggle.className = "menu-toggle";
-    toggle.setAttribute("aria-label", "Open navigation menu");
+    toggle.setAttribute("aria-label", "Toggle navigation");
     toggle.innerHTML = "<span></span><span></span><span></span>";
-
     navbar.appendChild(toggle);
 
     toggle.addEventListener("click", () => {
@@ -19,11 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const FADE_DURATION = 350;
+  document.querySelectorAll(".navbar nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navbar?.classList.remove("menu-open");
+      document.body.classList.remove("menu-open");
+    });
+  });
 
-  const links = document.querySelectorAll("a[href]");
-
-  links.forEach((link) => {
+  document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
 
     if (
@@ -31,22 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
       !href.startsWith("#") &&
       !href.startsWith("mailto:") &&
       !href.startsWith("http") &&
-      link.target !== "_blank" &&
-      !href.includes(".pdf")
+      !href.includes(".pdf") &&
+      link.target !== "_blank"
     ) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
-
-        if (navbar) {
-          navbar.classList.remove("menu-open");
-          document.body.classList.remove("menu-open");
-        }
-
         document.body.classList.remove("loaded");
 
         setTimeout(() => {
           window.location.href = href;
-        }, FADE_DURATION);
+        }, 300);
       });
     }
   });

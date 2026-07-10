@@ -261,3 +261,127 @@ button {
     letter-spacing: 10px;
   }
 }
+
+/* Better tablet + mobile navbar */
+@media (max-width: 1100px) {
+  .navbar {
+    height: 92px;
+    padding: 22px 32px;
+  }
+
+  .brand {
+    min-width: auto;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand h1 {
+    font-size: 18px;
+    letter-spacing: 7px;
+  }
+
+  .brand p {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .navbar nav {
+    gap: 28px;
+  }
+
+  .navbar nav a {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+}
+
+@media (max-width: 850px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .navbar {
+    height: 78px;
+    padding: 16px 22px;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand h1,
+  .brand p {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+    position: relative;
+    z-index: 200;
+  }
+
+  .menu-toggle span {
+    position: absolute;
+    left: 10px;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    transition: 0.25s ease;
+  }
+
+  .menu-toggle span:nth-child(1) { top: 13px; }
+  .menu-toggle span:nth-child(2) { top: 21px; }
+  .menu-toggle span:nth-child(3) { top: 29px; }
+
+  .navbar.menu-open .menu-toggle span:nth-child(1) {
+    top: 21px;
+    transform: rotate(45deg);
+  }
+
+  .navbar.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar.menu-open .menu-toggle span:nth-child(3) {
+    top: 21px;
+    transform: rotate(-45deg);
+  }
+
+  .navbar nav {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: rgba(255,255,255,0.97);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+  }
+
+  .nav-dark nav {
+    background: rgba(5,5,5,0.97);
+    color: white;
+  }
+
+  .navbar.menu-open nav {
+    transform: translateX(0);
+  }
+
+  .navbar nav a {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+}
