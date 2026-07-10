@@ -443,43 +443,34 @@
 .cyan { color: #00a6a6; }
 
 
-@media (max-width: 1100px) {
-  .projects-main {
-    padding: 130px 0 90px;
-  }
-
-  .project-list {
-    width: 84vw;
-  }
-
-  .projects-title h2 {
-    font-size: 38px;
-    letter-spacing: 16px;
-  }
-}
+/* ============================= */
+/* PROJECTS MOBILE FIX */
+/* ============================= */
 
 @media (max-width: 850px) {
   .projects-main {
-    padding: 115px 0 70px;
+    padding: 118px 0 70px;
   }
 
   .projects-title {
-    margin-bottom: 55px;
+    margin-bottom: 50px;
+    padding: 0 24px;
   }
 
   .projects-title h2 {
-    font-size: 30px;
+    font-size: 34px;
     letter-spacing: 10px;
   }
 
   .projects-title p {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.7;
     letter-spacing: 1px;
   }
 
   .project-list {
-    width: 88vw;
-    gap: 38px;
+    width: 90vw;
+    gap: 34px;
   }
 
   .project-index {
@@ -487,13 +478,28 @@
   }
 
   .project-box {
-    height: 135px;
+    --angle: 26px;
+    height: 118px;
     padding-left: 28px;
+    padding-right: 24px;
+    overflow: hidden;
+  }
+
+  .project-box::before {
+    height: 124px;
+    transform: rotate(12deg);
+  }
+
+  .small-line {
+    width: 24px;
+    height: 2px;
+    margin-bottom: 14px;
   }
 
   .project-text h3 {
     font-size: 17px;
     letter-spacing: 4px;
+    line-height: 1.15;
   }
 
   .project-text p {
@@ -502,8 +508,9 @@
   }
 
   .project-art {
-    opacity: 0.22;
-    transform: scale(0.62);
-    right: -130px;
+    opacity: 0.18;
+    transform: scale(0.52);
+    right: -135px;
+    top: -35px;
   }
 }
