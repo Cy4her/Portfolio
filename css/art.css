@@ -1,0 +1,155 @@
+.art-page {
+  background: #ffffff !important;
+  color: #050505 !important;
+}
+
+.art-page * {
+  box-sizing: border-box;
+}
+
+.art-page .navbar {
+  position: relative;
+  z-index: 50;
+}
+
+.art-main {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 150px 8vw 100px;
+  background:
+    linear-gradient(90deg, rgba(201, 29, 29, 0.08) 0 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.04) 0 1px, transparent 1px),
+    #ffffff;
+  background-size: 80px 80px;
+}
+
+.back-link {
+  position: relative;
+  z-index: 20;
+  display: inline-block;
+  margin-bottom: 70px;
+  color: #050505 !important;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.art-title {
+  position: relative;
+  z-index: 20;
+  border-top: 2px solid #050505;
+  border-bottom: 2px solid #050505;
+  padding: 58px 0 62px;
+  margin-bottom: 54px;
+}
+
+.section-label {
+  color: #c91d1d !important;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.art-title h2 {
+  color: #050505 !important;
+  font-size: clamp(54px, 8vw, 110px);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: 22px;
+  margin-bottom: 28px;
+}
+
+.art-description {
+  max-width: 620px;
+  color: #333 !important;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 1.4px;
+}
+
+.art-grid {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+.art-card {
+  background: #ffffff;
+  border: 2px solid #050505;
+  color: #050505;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.art-image {
+  height: 290px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(201, 29, 29, 0.12), transparent 35%),
+    linear-gradient(135deg, #eeeeee, #ffffff);
+  border-bottom: 2px solid #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.art-info {
+  padding: 24px;
+}
+
+.art-info span {
+  display: block;
+  color: #c91d1d;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.art-info h3 {
+  color: #050505;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.art-info p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.art-card:hover {
+  border-color: #c91d1d;
+  transform: translateY(-4px);
+}
+
+.art-card:hover .art-image {
+  border-bottom-color: #c91d1d;
+}
+
+@media (max-width: 950px) {
+  .art-main {
+    padding: 135px 7vw 80px;
+  }
+
+  .art-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .art-title h2 {
+    letter-spacing: 12px;
+  }
+}

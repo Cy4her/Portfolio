@@ -1,0 +1,225 @@
+.music-page {
+  background: #ffffff;
+  color: #050505;
+}
+
+.music-main {
+  min-height: 100vh;
+  padding: 150px 6vw 90px;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(101, 38, 201, 0.055) 0 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.03) 0 1px, transparent 1px),
+    #ffffff;
+  background-size: 82px 82px;
+}
+
+.music-main::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 135px;
+  width: 520px;
+  height: 260px;
+  opacity: 0.16;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, #6526c9 0 4px, transparent 5px) 60px 80px / 120px 120px no-repeat,
+    radial-gradient(circle, #6526c9 0 4px, transparent 5px) 240px 120px / 120px 120px no-repeat,
+    linear-gradient(165deg, transparent 0 42%, #6526c9 43% 44%, transparent 45%) 0 0 / 520px 70px repeat-y,
+    linear-gradient(12deg, transparent 0 42%, #6526c9 43% 44%, transparent 45%) 0 30px / 520px 70px repeat-y;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 70px;
+  color: #6526c9;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.music-title {
+  max-width: 720px;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-label {
+  color: #6526c9;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.music-title h2 {
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.95;
+  letter-spacing: 24px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 28px;
+}
+
+.title-line {
+  display: block;
+  width: 110px;
+  height: 3px;
+  background: #6526c9;
+  margin-bottom: 28px;
+}
+
+.music-title p {
+  color: #333;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 1.2px;
+}
+
+.music-list {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0,0,0,0.18);
+}
+
+.track-item {
+  display: grid;
+  grid-template-columns: 70px 96px 1.4fr 0.9fr 0.75fr;
+  gap: 28px;
+  align-items: center;
+  min-height: 128px;
+  padding: 22px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  border-left: 4px solid transparent;
+  background: rgba(255,255,255,0.88);
+  transition: 0.25s ease;
+}
+
+.track-number {
+  color: #6526c9;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.album-art {
+  width: 88px;
+  height: 88px;
+  border: 1px solid rgba(0,0,0,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.purple-cover {
+  background: linear-gradient(135deg, #1a0b30, #6526c9);
+}
+
+.blue-cover {
+  background: linear-gradient(135deg, #101b44, #326dff);
+}
+
+.red-cover {
+  background: linear-gradient(135deg, #2d0b16, #c91d1d);
+}
+
+.green-cover {
+  background: linear-gradient(135deg, #0c2415, #2e8b57);
+}
+
+.dark-cover {
+  background: linear-gradient(135deg, #090909, #3b197e);
+}
+
+.gold-cover {
+  background: linear-gradient(135deg, #2d210d, #d99a32);
+}
+
+.track-info h3 {
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.track-info p {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.track-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.track-meta span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.track-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.track-actions a {
+  border: 1px solid #050505;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.track-item:hover {
+  border-left-color: #6526c9;
+  transform: translateX(6px);
+}
+
+.track-item:hover .track-actions a {
+  border-color: #6526c9;
+  color: #6526c9;
+}
+
+@media (max-width: 1000px) {
+  .track-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .track-meta,
+  .track-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 850px) {
+  .music-main {
+    padding: 135px 7vw 70px;
+  }
+
+  .music-title h2 {
+    font-size: 42px;
+    letter-spacing: 12px;
+  }
+}

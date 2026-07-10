@@ -1,0 +1,223 @@
+.cs-page {
+  background: #ffffff;
+  color: #050505;
+}
+
+.cs-main {
+  min-height: 100vh;
+  padding: 150px 6vw 90px;
+  background:
+    linear-gradient(90deg, rgba(20,92,255,0.06) 0 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.035) 0 1px, transparent 1px),
+    #ffffff;
+  background-size: 82px 82px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-main::after {
+  content: "</>";
+  position: absolute;
+  right: 10vw;
+  top: 170px;
+  font-size: 90px;
+  font-weight: 900;
+  color: rgba(20,92,255,0.08);
+  letter-spacing: 8px;
+  pointer-events: none;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 70px;
+  color: #145cff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cs-title {
+  max-width: 820px;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-label {
+  color: #145cff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.cs-title h2 {
+  font-size: clamp(42px, 5vw, 78px);
+  line-height: 1.05;
+  letter-spacing: 18px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 28px;
+}
+
+.title-line {
+  display: block;
+  width: 110px;
+  height: 3px;
+  background: #145cff;
+  margin-bottom: 28px;
+}
+
+.cs-title p {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 1.2px;
+}
+
+.cs-filters {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 42px;
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  margin-bottom: 18px;
+}
+
+.cs-filters button {
+  background: none;
+  border: none;
+  padding: 0 0 16px;
+  color: #050505;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cs-filters button.active {
+  color: #145cff;
+  border-bottom: 3px solid #145cff;
+}
+
+.cs-list {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0,0,0,0.18);
+}
+
+.cs-item {
+  display: grid;
+  grid-template-columns: 70px 1.4fr 1fr 0.9fr 0.9fr;
+  gap: 24px;
+  align-items: center;
+  min-height: 112px;
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  border-left: 4px solid transparent;
+  background: rgba(255,255,255,0.86);
+  padding: 24px 20px;
+  transition: 0.25s ease;
+}
+
+.cs-number {
+  color: #145cff;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.cs-info h3 {
+  font-size: 18px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cs-info p {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-tags span,
+.cs-meta span {
+  border: 1px solid rgba(0,0,0,0.25);
+  padding: 6px 9px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  background: #fff;
+}
+
+.cs-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-actions a {
+  border: 1px solid #050505;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cs-item:hover {
+  border-left-color: #145cff;
+  transform: translateX(6px);
+}
+
+.cs-item:hover .cs-actions a {
+  border-color: #145cff;
+  color: #145cff;
+}
+
+@media (max-width: 1050px) {
+  .cs-item {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cs-meta,
+  .cs-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 850px) {
+  .cs-main {
+    padding: 135px 7vw 70px;
+  }
+
+  .cs-title h2 {
+    font-size: 34px;
+    letter-spacing: 8px;
+  }
+
+  .cs-filters {
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+}
