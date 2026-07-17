@@ -233,3 +233,71 @@ background-image:
     font-size: 10px;
   }
 }
+
+/* ============================= */
+/* HOME MOBILE OVERLAP FIX */
+/* ============================= */
+
+@media (max-width: 650px) {
+  .home-hero {
+    min-height: 100dvh;
+    background-position: center top;
+  }
+
+  .hero-content {
+    padding: 185px 32px 120px;
+    transform: none;
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 1.5px;
+    padding-left: 32px;
+    margin-bottom: 28px;
+  }
+
+  .hero-content h2 {
+    font-size: 42px !important;
+    line-height: 1.05;
+    letter-spacing: 4px;
+    margin-bottom: 26px;
+  }
+
+  .subtitle {
+    font-size: 15px !important;
+    margin-bottom: 34px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .btn {
+    width: 100%;
+    height: 62px;
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .scroll-hint {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 36px;
+    font-size: 10px;
+  }
+
+  .scroll-hint span {
+    width: 24px;
+    height: 40px;
+    border-width: 2px;
+  }
+
+  .circuit-left,
+  .circuit-right {
+    opacity: 0.14;
+  }
+}
