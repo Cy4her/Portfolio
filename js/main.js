@@ -16,26 +16,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll(".navbar nav a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navbar?.classList.remove("menu-open");
-      document.body.classList.remove("menu-open");
-    });
-  });
-
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
 
-    if (
+    const isNormalPageLink =
       href &&
       !href.startsWith("#") &&
       !href.startsWith("mailto:") &&
       !href.startsWith("http") &&
       !href.includes(".pdf") &&
-      link.target !== "_blank"
-    ) {
+      link.target !== "_blank";
+
+    if (isNormalPageLink) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
+
+        if (navbar) navbar.classList.remove("menu-open");
+        document.body.classList.remove("menu-open");
+
         document.body.classList.remove("loaded");
 
         setTimeout(() => {
@@ -44,4 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+});
+
+/* Fix blank page when using phone/browser back button */
+window.addEventListener("pageshow", () => {
+  document.body.classList.add("loaded");
+  document.body.classList.remove("menu-open");
+
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    navbar.classList.remove("menu-open");
+  }
 });
