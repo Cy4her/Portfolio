@@ -301,3 +301,24 @@ background-image:
     opacity: 0.14;
   }
 }
+
+
+@media (max-width: 650px) {
+  .hero-content {
+    padding: 175px 30px 110px;
+  }
+
+  .hero-content h2 {
+    font-size: 39px !important;
+    line-height: 1.08;
+    letter-spacing: 3px;
+  }
+
+  .subtitle {
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    gap: 16px;
+  }
+}

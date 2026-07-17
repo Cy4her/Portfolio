@@ -98,3 +98,42 @@
     padding: 180px 28px 40px;
   }
 }
+
+
+
+@media (max-width: 650px) {
+  .about-hero {
+    padding-top: 0;
+    min-height: auto;
+    background-position: center top;
+  }
+
+  .about-text {
+    padding: 170px 28px 50px;
+    max-width: 100%;
+  }
+
+  .about-label {
+    font-size: 11px !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 28px;
+  }
+
+  .about-text h2 {
+    font-size: 36px !important;
+    line-height: 1.18;
+    letter-spacing: 4px;
+    margin-bottom: 34px;
+  }
+
+  .about-text p {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    letter-spacing: 0.8px !important;
+    margin-bottom: 24px;
+  }
+
+  .focus-section {
+    padding: 45px 28px 70px;
+  }
+}
