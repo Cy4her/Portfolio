@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url(
+  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+);
 
 :root {
   --black: #050505;
@@ -12,21 +14,27 @@
   --orange: #f08a24;
 }
 
+/* ============================= */
+/* RESET */
+/* ============================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100%;
   font-family: "Inter", sans-serif;
   background: var(--white);
   color: var(--black);
-}
 
-body {
   opacity: 0;
   transition: opacity 0.45s ease;
 }
@@ -35,54 +43,84 @@ body.loaded {
   opacity: 1;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-a,
-button {
-  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+button,
+a {
+  font-family: inherit;
 }
 
+a,
+button {
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* ============================= */
 /* NAVBAR */
+/* ============================= */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
+
   width: 100%;
   height: 112px;
   padding: 30px 56px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 100;
 }
 
 .brand {
+  position: relative;
+  z-index: 300;
+
   display: flex;
   align-items: center;
   gap: 18px;
+
   min-width: 360px;
-  z-index: 120;
 }
 
 .brand img {
   width: 64px;
   height: 64px;
+
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .brand h1 {
   font-size: 24px;
-  letter-spacing: 10px;
   font-weight: 600;
+  letter-spacing: 10px;
   white-space: nowrap;
 }
 
 .brand p {
   margin-top: 7px;
+
   font-size: 14px;
   letter-spacing: 5px;
   white-space: nowrap;
@@ -93,26 +131,32 @@ button {
   align-items: center;
   justify-content: flex-end;
   gap: clamp(28px, 4vw, 54px);
+
   white-space: nowrap;
 }
 
 .navbar nav a {
   position: relative;
+
+  padding-bottom: 12px;
+
   font-size: 14px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  padding-bottom: 12px;
 }
 
 .navbar nav a::after {
   content: "";
   position: absolute;
+
   left: 0;
   bottom: 0;
-  width: 0%;
+
+  width: 0;
   height: 2px;
+
   background: currentColor;
-  transition: 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 .navbar nav a:hover::after,
@@ -126,147 +170,109 @@ button {
 
 .nav-light {
   color: black;
-  background: rgba(255,255,255,0.88);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
 }
 
-/* MOBILE MENU BUTTON */
+/* ============================= */
+/* MENU BUTTON */
+/* ============================= */
+
 .menu-toggle {
+  position: relative;
+  z-index: 300;
+
   display: none;
-  width: 46px;
-  height: 46px;
+
+  width: 44px;
+  height: 44px;
+
   border: 1px solid currentColor;
   background: transparent;
   color: inherit;
+
   cursor: pointer;
-  z-index: 130;
-  position: relative;
 }
 
 .menu-toggle span {
   position: absolute;
-  left: 11px;
+  left: 10px;
+
   width: 22px;
   height: 2px;
+
   background: currentColor;
-  transition: 0.3s ease;
+  transition:
+    top 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .menu-toggle span:nth-child(1) {
-  top: 14px;
+  top: 13px;
 }
 
 .menu-toggle span:nth-child(2) {
-  top: 22px;
+  top: 21px;
 }
 
 .menu-toggle span:nth-child(3) {
-  top: 30px;
+  top: 29px;
 }
 
-.menu-open .menu-toggle span:nth-child(1) {
-  top: 22px;
+.navbar.menu-open .menu-toggle span:nth-child(1) {
+  top: 21px;
   transform: rotate(45deg);
 }
 
-.menu-open .menu-toggle span:nth-child(2) {
+.navbar.menu-open .menu-toggle span:nth-child(2) {
   opacity: 0;
 }
 
-.menu-open .menu-toggle span:nth-child(3) {
-  top: 22px;
+.navbar.menu-open .menu-toggle span:nth-child(3) {
+  top: 21px;
   transform: rotate(-45deg);
 }
 
+/* ============================= */
+/* SHARED PAGE TITLE */
+/* ============================= */
+
 .page-title {
-  text-align: center;
   padding-top: 190px;
+  text-align: center;
 }
 
 .page-title h2 {
   font-size: 38px;
-  letter-spacing: 18px;
   font-weight: 700;
+  letter-spacing: 18px;
+}
+
+.page-title p {
+  line-height: 1.7;
 }
 
 .title-line {
   width: 48px;
   height: 2px;
-  background: currentColor;
   margin: 28px auto;
+
+  background: currentColor;
 }
 
-/* MOBILE */
-@media (max-width: 850px) {
-  .navbar {
-    height: 82px;
-    padding: 18px 22px;
-  }
+/* ============================= */
+/* TABLET */
+/* ============================= */
 
-  .brand {
-    min-width: auto;
-    gap: 12px;
-  }
-
-  .brand img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .brand h1,
-  .brand p {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .navbar nav {
-    position: fixed;
-    inset: 0;
-    background: rgba(255,255,255,0.96);
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 34px;
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
-    z-index: 110;
-  }
-
-  .nav-dark nav {
-    background: rgba(5,5,5,0.96);
-    color: white;
-  }
-
-  .navbar.menu-open nav {
-    transform: translateX(0);
-  }
-
-  .navbar nav a {
-    font-size: 18px;
-    letter-spacing: 5px;
-    padding-bottom: 10px;
-  }
-
-  .page-title {
-    padding-top: 140px;
-  }
-
-  .page-title h2 {
-    font-size: 30px;
-    letter-spacing: 10px;
-  }
-}
-
-/* Better tablet + mobile navbar */
 @media (max-width: 1100px) {
+  html {
+    font-size: 92%;
+  }
+
   .navbar {
     height: 92px;
-    padding: 22px 32px;
+    padding: 22px 30px;
   }
 
   .brand {
@@ -280,12 +286,12 @@ button {
 
   .brand h1 {
     font-size: 18px;
-    letter-spacing: 7px;
+    letter-spacing: 6px;
   }
 
   .brand p {
     font-size: 11px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
 
   .navbar nav {
@@ -294,114 +300,39 @@ button {
 
   .navbar nav a {
     font-size: 12px;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
+  }
+
+  .page-title {
+    padding-top: 150px;
+  }
+
+  .page-title h2 {
+    font-size: clamp(30px, 5vw, 44px);
+    letter-spacing: 8px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 
-@media (max-width: 850px) {
-  body.menu-open {
-    overflow: hidden;
-  }
-
-  .navbar {
-    height: 78px;
-    padding: 16px 22px;
-  }
-
-  .brand img {
-    width: 46px;
-    height: 46px;
-  }
-
-  .brand h1,
-  .brand p {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-    width: 44px;
-    height: 44px;
-    border: 1px solid currentColor;
-    background: transparent;
-    color: inherit;
-    position: relative;
-    z-index: 200;
-  }
-
-  .menu-toggle span {
-    position: absolute;
-    left: 10px;
-    width: 22px;
-    height: 2px;
-    background: currentColor;
-    transition: 0.25s ease;
-  }
-
-  .menu-toggle span:nth-child(1) { top: 13px; }
-  .menu-toggle span:nth-child(2) { top: 21px; }
-  .menu-toggle span:nth-child(3) { top: 29px; }
-
-  .navbar.menu-open .menu-toggle span:nth-child(1) {
-    top: 21px;
-    transform: rotate(45deg);
-  }
-
-  .navbar.menu-open .menu-toggle span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar.menu-open .menu-toggle span:nth-child(3) {
-    top: 21px;
-    transform: rotate(-45deg);
-  }
-
-  .navbar nav {
-    position: fixed;
-    inset: 0;
-    z-index: 150;
-    background: rgba(255,255,255,0.97);
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 34px;
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
-  }
-
-  .nav-dark nav {
-    background: rgba(5,5,5,0.97);
-    color: white;
-  }
-
-  .navbar.menu-open nav {
-    transform: translateX(0);
-  }
-
-  .navbar nav a {
-    font-size: 18px;
-    letter-spacing: 4px;
-  }
-}
-
-
-
 /* ============================= */
-/* FINAL MOBILE NAV FIX */
+/* MOBILE NAVIGATION */
 /* ============================= */
 
 @media (max-width: 850px) {
-  body.menu-open {
-    overflow: hidden;
-  }
-
   .navbar {
     height: 78px;
     padding: 16px 24px;
   }
 
+  .brand {
+    min-width: auto;
+    gap: 12px;
+  }
+
   .brand img {
     width: 46px;
     height: 46px;
@@ -414,54 +345,22 @@ button {
 
   .menu-toggle {
     display: block;
-    width: 44px;
-    height: 44px;
-    border: 1px solid currentColor;
-    background: transparent;
-    color: inherit;
-    position: relative;
-    z-index: 300;
   }
 
-  .menu-toggle span {
-    position: absolute;
-    left: 10px;
-    width: 22px;
-    height: 2px;
-    background: currentColor;
-    transition: 0.25s ease;
-  }
-
-  .menu-toggle span:nth-child(1) { top: 13px; }
-  .menu-toggle span:nth-child(2) { top: 21px; }
-  .menu-toggle span:nth-child(3) { top: 29px; }
-
-  .navbar.menu-open .menu-toggle span:nth-child(1) {
-    top: 21px;
-    transform: rotate(45deg);
-  }
-
-  .navbar.menu-open .menu-toggle span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar.menu-open .menu-toggle span:nth-child(3) {
-    top: 21px;
-    transform: rotate(-45deg);
-  }
-
-  /* Make every mobile menu look like the Home page */
   .navbar nav {
     position: fixed;
     inset: 0;
     z-index: 250;
-    background: rgba(5, 5, 5, 0.94) !important;
-    color: white !important;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 42px;
+
+    background: rgba(5, 5, 5, 0.96);
+    color: white;
+
     transform: translateX(100%);
     transition: transform 0.35s ease;
   }
@@ -471,131 +370,85 @@ button {
   }
 
   .navbar.menu-open {
-    color: white !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
+    color: white;
+    background: transparent;
+    backdrop-filter: none;
   }
 
   .navbar nav a {
-    font-size: 24px;
-    letter-spacing: 9px;
+    padding-bottom: 10px;
+
+    color: white;
+    font-size: 22px;
     font-weight: 500;
-    color: white !important;
+    letter-spacing: 6px;
+  }
+
+  .page-title {
+    padding-top: 130px;
+  }
+
+  .page-title h2 {
+    font-size: 30px;
+    letter-spacing: 8px;
   }
 }
 
+/* ============================= */
+/* PHONE */
+/* ============================= */
 
-/* ===========================================
-   RESPONSIVE TYPOGRAPHY
-   =========================================== */
+@media (max-width: 650px) {
+  html {
+    font-size: 100%;
+  }
 
-/* ---------- TABLET ---------- */
-@media (max-width:1100px){
+  .navbar {
+    padding: 16px 20px;
+  }
 
-    html{
-        font-size:92%;
-    }
+  .brand img {
+    width: 44px;
+    height: 44px;
+  }
 
-    .navbar{
-        padding:22px 30px;
-    }
+  .navbar nav {
+    gap: 34px;
+  }
 
-    .brand img{
-        width:52px;
-        height:52px;
-    }
+  .navbar nav a {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
 
-    .brand h1{
-        font-size:18px;
-        letter-spacing:6px;
-    }
+  .page-title {
+    padding-top: 115px;
+  }
 
-    .brand p{
-        font-size:11px;
-        letter-spacing:2px;
-    }
+  .page-title h2 {
+    font-size: clamp(24px, 7vw, 32px);
+    line-height: 1.15;
+    letter-spacing: 5px;
+  }
 
-    .navbar nav a{
-        font-size:12px;
-        letter-spacing:2px;
-    }
+  .page-title p {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+  }
 
-    h2{
-        font-size:clamp(30px,5vw,44px) !important;
-        letter-spacing:8px !important;
-    }
+  .title-line {
+    width: 30px;
+  }
 
-    h3{
-        font-size:18px !important;
-        letter-spacing:3px !important;
-    }
+  .section-label,
+  .about-label,
+  .focus-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
 
-    p{
-        font-size:14px !important;
-        line-height:1.6 !important;
-    }
-
-    .btn{
-        min-width:180px;
-        height:56px;
-        font-size:12px;
-    }
-
-    .page-title{
-        padding-top:150px;
-    }
-
-}
-
-
-/* ---------- PHONE ---------- */
-@media (max-width:650px){
-
-    html{
-        font-size:80%;
-    }
-
-    h2{
-        font-size:clamp(24px,6vw,32px) !important;
-        letter-spacing:5px !important;
-        line-height:1.15 !important;
-    }
-
-    h3{
-        font-size:15px !important;
-        letter-spacing:2px !important;
-    }
-
-    p{
-        font-size:12px !important;
-        line-height:1.5 !important;
-        letter-spacing:.3px !important;
-    }
-
-    .section-label,
-    .about-label,
-    .focus-label{
-        font-size:10px !important;
-        letter-spacing:2px !important;
-    }
-
-    .back-link{
-        font-size:11px !important;
-    }
-
-    .btn{
-        min-width:160px;
-        height:48px;
-        font-size:11px;
-        letter-spacing:2px;
-    }
-
-    .title-line{
-        width:30px !important;
-    }
-
-    .page-title{
-        padding-top:120px;
-    }
-
+  .back-link {
+    font-size: 11px;
+  }
 }
