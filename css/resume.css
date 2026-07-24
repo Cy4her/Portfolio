@@ -83,3 +83,88 @@
   margin-top: 60px;
   flex-wrap: wrap;
 }
+
+
+/* ============================= */
+/* RESUME MOBILE SIZE FIX */
+/* ============================= */
+
+@media (max-width: 650px) {
+  .resume-main {
+    min-height: 100vh;
+    padding: 110px 22px 55px;
+  }
+
+  .resume-main .page-title {
+    padding-top: 0;
+  }
+
+  .resume-main .page-title h2 {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    letter-spacing: 5px !important;
+  }
+
+  .resume-main .page-title p {
+    max-width: 320px;
+    margin: 0 auto;
+
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0.4px !important;
+  }
+
+  .resume-buttons {
+    flex-direction: column;
+    gap: 14px;
+
+    width: 100%;
+    max-width: 360px;
+    margin: 34px auto 0;
+  }
+
+  .download-button,
+  .resume-button {
+    width: 100%;
+    height: 54px;
+    min-height: 54px;
+    margin: 0;
+    padding: 0 18px;
+
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+
+    clip-path: polygon(
+      4% 0,
+      100% 0,
+      100% 72%,
+      96% 100%,
+      0 100%,
+      0 28%
+    );
+  }
+
+  .download-button span,
+  .resume-button span {
+    font-size: 14px;
+  }
+
+  .resume-note {
+    margin-top: 20px;
+
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .watermark {
+    width: 130px;
+    left: 20px;
+    bottom: 20px;
+    opacity: 0.025;
+  }
+
+  .resume-main::after {
+    display: none;
+  }
+}

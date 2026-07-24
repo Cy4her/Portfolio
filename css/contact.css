@@ -72,3 +72,60 @@
   color: var(--blue);
   border-color: var(--blue);
 }
+
+
+/* ============================= */
+/* CONTACT MOBILE SIZE FIX */
+/* ============================= */
+
+@media (max-width: 650px) {
+  .contact-main {
+    min-height: 100vh;
+    padding: 110px 22px 55px;
+  }
+
+  .contact-main .page-title {
+    padding-top: 0;
+    margin-bottom: 34px;
+  }
+
+  .contact-main .page-title h2 {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    letter-spacing: 5px !important;
+  }
+
+  .contact-main .page-title p {
+    max-width: 310px;
+    margin: 0 auto;
+
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0.4px !important;
+  }
+
+  .contact-links {
+    width: 100%;
+    max-width: 360px;
+    margin: 32px auto 0;
+
+    gap: 12px;
+  }
+
+  .contact-links a {
+    min-height: 54px;
+    padding: 0 18px;
+
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .contact-links a span {
+    font-size: 15px;
+  }
+
+  .watermark {
+    width: 130px;
+    opacity: 0.025;
+  }
+}
