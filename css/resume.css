@@ -168,3 +168,53 @@
     display: none;
   }
 }
+
+/* ============================= */
+/* SMALLER MOBILE RESUME BUTTONS */
+/* ============================= */
+
+@media (max-width: 650px) {
+  .resume-main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .resume-buttons {
+    width: 100%;
+    max-width: 310px;
+    margin: 34px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .download-button,
+  .resume-button {
+    width: 100%;
+    height: 52px;
+    min-height: 52px;
+    margin: 0;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .download-button span,
+  .resume-button span {
+    position: absolute;
+    right: 16px;
+    font-size: 13px;
+  }
+
+  .resume-note {
+    margin-top: 18px;
+    text-align: center;
+  }
+}

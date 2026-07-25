@@ -129,3 +129,72 @@
     opacity: 0.025;
   }
 }
+
+/* =========================================
+   CONTACT MOBILE IMPROVEMENT
+   ========================================= */
+
+@media (max-width: 650px) {
+
+  .contact-main {
+    padding: 110px 20px 55px;
+  }
+
+  .contact-main .page-title {
+    margin-bottom: 32px;
+  }
+
+  .contact-main .page-title h2 {
+    font-size: 28px !important;
+    letter-spacing: 5px !important;
+  }
+
+  .contact-main .page-title p {
+    max-width: 300px;
+    margin: 0 auto;
+
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  /* Smaller contact section */
+  .contact-links {
+    width: 100%;
+    max-width: 310px;
+    margin: 30px auto 0;
+    gap: 14px;
+  }
+
+  /* Smaller buttons */
+  .contact-links a {
+    height: 52px;
+    min-height: 52px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    text-align: center;
+
+    font-size: 10px !important;
+    font-weight: 700;
+    letter-spacing: 2px !important;
+  }
+
+  /* Arrow stays on the right */
+  .contact-links a span {
+    position: absolute;
+    right: 18px;
+    font-size: 14px;
+  }
+
+  .watermark {
+    width: 120px;
+    opacity: 0.02;
+  }
+}
