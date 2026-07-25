@@ -131,70 +131,67 @@
 }
 
 /* =========================================
-   CONTACT MOBILE IMPROVEMENT
+   CONTACT MOBILE
    ========================================= */
 
 @media (max-width: 650px) {
 
-  .contact-main {
-    padding: 110px 20px 55px;
+  .contact-main{
+      padding:110px 20px 50px;
   }
 
-  .contact-main .page-title {
-    margin-bottom: 32px;
+  .contact-main .page-title{
+      margin-bottom:30px;
   }
 
-  .contact-main .page-title h2 {
-    font-size: 28px !important;
-    letter-spacing: 5px !important;
+  .contact-main .page-title h2{
+      font-size:28px !important;
+      letter-spacing:5px !important;
   }
 
-  .contact-main .page-title p {
-    max-width: 300px;
-    margin: 0 auto;
+  .contact-main .page-title p{
+      max-width:290px;
+      margin:0 auto;
 
-    font-size: 12px !important;
-    line-height: 1.55 !important;
-    letter-spacing: 0.3px !important;
+    
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 1.5px !important;
   }
 
-  /* Smaller contact section */
-  .contact-links {
-    width: 100%;
-    max-width: 310px;
-    margin: 30px auto 0;
-    gap: 14px;
+  .contact-links{
+      width:280px;              /* smaller width */
+      margin:28px auto 0;
+      gap:14px;
   }
 
-  /* Smaller buttons */
-  .contact-links a {
-    height: 52px;
-    min-height: 52px;
+  .contact-links a{
+      height:48px;              /* shorter */
+      min-height:48px;
 
-    padding: 0 18px;
+      padding:0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      display:flex;
+      justify-content:center;   /* center text */
+      align-items:center;
 
-    position: relative;
+      text-align:center;
 
-    text-align: center;
-
-    font-size: 10px !important;
-    font-weight: 700;
-    letter-spacing: 2px !important;
+      font-size:10px !important;
+      font-weight:700;
+      letter-spacing:2px !important;
   }
 
   /* Arrow stays on the right */
-  .contact-links a span {
-    position: absolute;
-    right: 18px;
-    font-size: 14px;
+  .contact-links a span{
+      position:absolute;
+      right:14px;
+      font-size:13px;
   }
 
-  .watermark {
-    width: 120px;
-    opacity: 0.02;
+  .watermark{
+      width:120px;
+      opacity:.02;
   }
+
 }
