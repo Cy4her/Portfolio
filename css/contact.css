@@ -16,7 +16,7 @@
   transform: skewY(8deg);
 }
 
-.page-title p {
+.minimal-page .page-title p {
   font-size: 18px;
   color: #444;
   line-height: 1.9;
@@ -141,25 +141,36 @@
       padding:110px 20px 50px;
   }
 
+  .minimal-page::after{
+      display:none;
+  }
+
   .minimal-page .page-title{
       padding-top:0;
-      margin-bottom:30px;
+      margin-bottom:28px;
+      text-align:center;
   }
 
   .minimal-page .page-title h2{
       font-size:28px !important;
-      letter-spacing:5px !important;
       line-height:1.1 !important;
+      letter-spacing:5px !important;
   }
 
+  .minimal-page .title-line{
+      width:30px;
+      margin:18px auto 24px;
+  }
+
+  /* Make the paragraph match the Resume page */
   .minimal-page .page-title p{
       max-width:290px;
       margin:0 auto;
 
-      font-size:9px !important;
-      line-height:1.45 !important;
-      letter-spacing:1.5px !important;
-      color:#666;
+      font-size:12px !important;
+      line-height:1.55 !important;
+      letter-spacing:.35px !important;
+      color:#666 !important;
   }
 
   .contact-links{
@@ -208,7 +219,4 @@
       opacity:.02;
   }
 
-  .minimal-page::after{
-      display:none;
-  }
 }
