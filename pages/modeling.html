@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>3D Modeling | Portfolio</title>
 
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/modeling.css" />
+
+  <!-- Renders GLB and glTF models -->
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
 </head>
 
 <body class="modeling-page">
 
   <header class="navbar nav-light">
+
     <a href="../index.html" class="brand">
-      <img src="../assets/Logo.png" alt="Logo" />
+      <img
+        src="../assets/Logo.png"
+        alt="Portfolio logo"
+      />
+
       <div>
         <h1>YOUR NAME</h1>
         <p>ELECTRICAL ENGINEERING</p>
@@ -28,142 +43,288 @@
       <a href="resume.html">Resume</a>
       <a href="contact.html">Contact</a>
     </nav>
+
   </header>
 
   <main class="modeling-main">
 
-    <a href="projects.html" class="back-link">← Back to Projects</a>
+    <a href="projects.html" class="back-link">
+      ← Back to Projects
+    </a>
 
     <section class="modeling-title">
-      <p class="section-label">01 / Project Category</p>
-      <h2>3D Modeling</h2>
-      <span class="title-line"></span>
-      <p>
-        A collection of 3D models, CAD work, renders,
-        environments, props, and visual studies.
+
+      <p class="section-label">
+        01 / Project Category
       </p>
+
+      <h2>3D Modeling</h2>
+
+      <span class="title-line"></span>
+
+      <p>
+        Interactive CAD and 3D models. Drag a model to rotate it,
+        and use the mouse wheel or a pinch gesture to zoom.
+      </p>
+
     </section>
 
-    <section class="modeling-list">
+    <section class="model-gallery">
 
-      <article class="model-item">
-        <span class="model-number">01</span>
-        <div class="model-preview">RENDER</div>
-        <div class="model-info">
-          <h3>Medieval House</h3>
-          <p>Detailed house scene with handcrafted assets and materials.</p>
-          <div class="model-tags">
-            <span>Blender</span>
-            <span>Texturing</span>
-            <span>Lighting</span>
+      <!-- BOLT -->
+      <article class="model-card">
+
+        <div class="model-viewer-wrapper">
+
+          <model-viewer
+  src="/pages/3D-Modeling/bolt.glb"
+  alt="Interactive 3D model of a bolt"
+  camera-controls
+  touch-action="pan-y"
+  auto-rotate
+  shadow-intensity="1"
+  exposure="1"
+  environment-image="neutral">
+</model-viewer>
+
+          <span class="interaction-label">
+            Drag to rotate
+          </span>
+
+        </div>
+
+        <div class="model-details">
+
+          <div class="model-heading">
+
+            <span class="model-number">
+              01
+            </span>
+
+            <div>
+              <p class="model-category">
+                Mechanical Model
+              </p>
+
+              <h3>Bolt</h3>
+            </div>
+
           </div>
-        </div>
-        <div class="model-meta">
-          <span>Environment</span>
-          <span>Blender</span>
-          <span>2026</span>
-        </div>
-        <a href="#" class="model-button">View Project →</a>
-      </article>
 
-      <article class="model-item">
-        <span class="model-number">02</span>
-        <div class="model-preview">MODEL</div>
-        <div class="model-info">
-          <h3>Sci-Fi Crate</h3>
-          <p>Hard-surface game asset with clean topology and PBR materials.</p>
-          <div class="model-tags">
-            <span>Hard Surface</span>
-            <span>PBR</span>
-            <span>Game Asset</span>
-          </div>
-        </div>
-        <div class="model-meta">
-          <span>Prop</span>
-          <span>Blender</span>
-          <span>2025</span>
-        </div>
-        <a href="#" class="model-button">View Project →</a>
-      </article>
+          <p class="model-description">
+            A mechanical bolt model created to explore threaded geometry,
+            accurate proportions, and precision-based CAD construction.
+          </p>
 
-      <article class="model-item">
-        <span class="model-number">03</span>
-        <div class="model-preview">CAD</div>
-        <div class="model-info">
-          <h3>Mechanical Bracket</h3>
-          <p>Functional CAD bracket with technical drawings and tolerances.</p>
           <div class="model-tags">
-            <span>Fusion 360</span>
             <span>CAD</span>
-            <span>Assembly</span>
+            <span>Mechanical</span>
+            <span>3D Model</span>
           </div>
+
+          <a
+            class="model-download"
+            href="/pages/3D-Modeling/bolt.glb"
+            download="Bolt.glb"
+          >
+            Download Model
+            <span aria-hidden="true">↓</span>
+          </a>
+
         </div>
-        <div class="model-meta">
-          <span>CAD Model</span>
-          <span>Fusion 360</span>
-          <span>2025</span>
-        </div>
-        <a href="#" class="model-button">View Project →</a>
+
       </article>
 
-      <article class="model-item">
-        <span class="model-number">04</span>
-        <div class="model-preview">BIKE</div>
-        <div class="model-info">
-          <h3>Futuristic Bike</h3>
-          <p>Concept vehicle model designed for a sci-fi short film project.</p>
-          <div class="model-tags">
-            <span>Vehicle</span>
-            <span>Rendering</span>
-            <span>Concept</span>
-          </div>
-        </div>
-        <div class="model-meta">
-          <span>Vehicle</span>
-          <span>Blender</span>
-          <span>2025</span>
-        </div>
-        <a href="#" class="model-button">View Project →</a>
-      </article>
+      <!-- CUP -->
+      <article class="model-card">
 
-      <article class="model-item">
-        <span class="model-number">05</span>
-        <div class="model-preview">CHAIR</div>
-        <div class="model-info">
-          <h3>Modern Chair</h3>
-          <p>Photorealistic product render of a modern lounge chair.</p>
+        <div class="model-viewer-wrapper">
+
+          <model-viewer
+  src="/pages/3D-Modeling/Cup.glb"
+  alt="Interactive 3D model of a cup"
+  camera-controls
+  touch-action="pan-y"
+  auto-rotate
+  shadow-intensity="1"
+  exposure="1"
+  environment-image="neutral">
+</model-viewer>
+
+          <span class="interaction-label">
+            Drag to rotate
+          </span>
+
+        </div>
+
+        <div class="model-details">
+
+          <div class="model-heading">
+
+            <span class="model-number">
+              02
+            </span>
+
+            <div>
+              <p class="model-category">
+                Product Model
+              </p>
+
+              <h3>Cup</h3>
+            </div>
+
+          </div>
+
+          <p class="model-description">
+            A product-style cup model exploring curved surfaces,
+            wall thickness, smooth transitions, and clean proportions.
+          </p>
+
           <div class="model-tags">
             <span>Product</span>
-            <span>Visualization</span>
-            <span>Materials</span>
+            <span>Surface</span>
+            <span>Modeling</span>
           </div>
+
+          <a
+            class="model-download"
+            href="/pages/3D-Modeling/Cup.glb"
+            download="Cup.glb"
+          >
+            Download Model
+            <span aria-hidden="true">↓</span>
+          </a>
+
         </div>
-        <div class="model-meta">
-          <span>Product</span>
-          <span>Blender</span>
-          <span>2024</span>
-        </div>
-        <a href="#" class="model-button">View Project →</a>
+
       </article>
 
-      <article class="model-item">
-        <span class="model-number">06</span>
-        <div class="model-preview">SPACE</div>
-        <div class="model-info">
-          <h3>Space Station Corridor</h3>
-          <p>Sci-fi corridor environment built with modular assets.</p>
-          <div class="model-tags">
-            <span>Environment</span>
-            <span>Modular</span>
-            <span>Lighting</span>
+      <!-- GLOBE -->
+      <article class="model-card">
+
+        <div class="model-viewer-wrapper">
+
+          <model-viewer
+  src="/pages/3D-Modeling/Globe.glb"
+  alt="Interactive 3D model of a globe"
+  camera-controls
+  touch-action="pan-y"
+  auto-rotate
+  shadow-intensity="1"
+  exposure="1"
+  environment-image="neutral">
+</model-viewer>
+
+          <span class="interaction-label">
+            Drag to rotate
+          </span>
+
+        </div>
+
+        <div class="model-details">
+
+          <div class="model-heading">
+
+            <span class="model-number">
+              03
+            </span>
+
+            <div>
+              <p class="model-category">
+                Geometric Study
+              </p>
+
+              <h3>Globe</h3>
+            </div>
+
           </div>
+
+          <p class="model-description">
+            A spherical modeling study focused on symmetry,
+            radial geometry, form development, and visualization.
+          </p>
+
+          <div class="model-tags">
+            <span>Geometry</span>
+            <span>Symmetry</span>
+            <span>Visualization</span>
+          </div>
+
+          <a
+            class="model-download"
+            href="/pages/3D-Modeling/Globe.glb"
+            download="Globe.glb"
+          >
+            Download Model
+            <span aria-hidden="true">↓</span>
+          </a>
+
         </div>
-        <div class="model-meta">
-          <span>Environment</span>
-          <span>Blender</span>
-          <span>2024</span>
+
+      </article>
+
+      <!-- HELIX -->
+      <article class="model-card">
+
+        <div class="model-viewer-wrapper">
+
+         <model-viewer
+  src="/pages/3D-Modeling/Helix.glb"
+  alt="Interactive 3D model of a helix"
+  camera-controls
+  touch-action="pan-y"
+  auto-rotate
+  shadow-intensity="1"
+  exposure="1"
+  environment-image="neutral">
+</model-viewer>
+
+          <span class="interaction-label">
+            Drag to rotate
+          </span>
+
         </div>
-        <a href="#" class="model-button">View Project →</a>
+
+        <div class="model-details">
+
+          <div class="model-heading">
+
+            <span class="model-number">
+              04
+            </span>
+
+            <div>
+              <p class="model-category">
+                Parametric Model
+              </p>
+
+              <h3>Helix</h3>
+            </div>
+
+          </div>
+
+          <p class="model-description">
+            A helical geometry study exploring pitch, repetition,
+            rotation, path-based modeling, and parametric form.
+          </p>
+
+          <div class="model-tags">
+            <span>Parametric</span>
+            <span>Helix</span>
+            <span>CAD</span>
+          </div>
+
+          <a
+            class="model-download"
+            href="./3D-Modeling%20Projects/Helix.glb"
+            download="Helix.glb"
+          >
+            Download Model
+            <span aria-hidden="true">↓</span>
+          </a>
+
+        </div>
+
       </article>
 
     </section>
@@ -171,5 +332,6 @@
   </main>
 
   <script src="../js/main.js"></script>
+
 </body>
 </html>
