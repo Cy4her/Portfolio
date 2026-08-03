@@ -1,152 +1,533 @@
 .art-page {
-  background: #ffffff !important;
-  color: #050505 !important;
+  background: #ffffff;
+  color: #050505;
 }
 
 .art-page * {
   box-sizing: border-box;
 }
 
-.art-page .navbar {
-  position: relative;
-  z-index: 50;
-}
+/* ============================= */
+/* PAGE */
+/* ============================= */
 
 .art-main {
-  position: relative;
-  z-index: 10;
   min-height: 100vh;
   padding: 150px 8vw 100px;
+
   background:
-    linear-gradient(90deg, rgba(201, 29, 29, 0.08) 0 1px, transparent 1px),
-    linear-gradient(rgba(0, 0, 0, 0.04) 0 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      rgba(201, 29, 29, 0.08) 0 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(0, 0, 0, 0.04) 0 1px,
+      transparent 1px
+    ),
     #ffffff;
+
   background-size: 80px 80px;
 }
 
 .back-link {
-  position: relative;
-  z-index: 20;
   display: inline-block;
   margin-bottom: 70px;
-  color: #050505 !important;
+
+  color: #050505;
+
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-decoration: none;
 }
 
+.back-link:hover {
+  color: #c91d1d;
+  transform: translateX(-4px);
+}
+
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
 .art-title {
-  position: relative;
-  z-index: 20;
+  margin-bottom: 70px;
+  padding: 58px 0 62px;
+
   border-top: 2px solid #050505;
   border-bottom: 2px solid #050505;
-  padding: 58px 0 62px;
-  margin-bottom: 54px;
 }
 
 .section-label {
-  color: #c91d1d !important;
+  margin-bottom: 22px;
+
+  color: #c91d1d;
+
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 22px;
 }
 
 .art-title h2 {
-  color: #050505 !important;
-  font-size: clamp(54px, 8vw, 110px);
-  line-height: 0.9;
-  font-weight: 900;
-  letter-spacing: 22px;
   margin-bottom: 28px;
+
+  font-size: clamp(54px, 8vw, 110px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: 22px;
 }
 
 .art-description {
-  max-width: 620px;
-  color: #333 !important;
+  max-width: 650px;
+
+  color: #333;
+
   font-size: 18px;
   line-height: 1.8;
   letter-spacing: 1.4px;
 }
 
-.art-grid {
-  position: relative;
-  z-index: 20;
+/* ============================= */
+/* COLLECTION */
+/* ============================= */
+
+.art-collection {
+  margin-bottom: 90px;
+
+  border-top: 2px solid #050505;
+}
+
+.collection-header {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 0.8fr);
+  gap: 40px;
+  align-items: end;
+
+  padding: 28px 0 30px;
 }
 
-.art-card {
-  background: #ffffff;
-  border: 2px solid #050505;
-  color: #050505;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.art-image {
-  height: 290px;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(201, 29, 29, 0.12), transparent 35%),
-    linear-gradient(135deg, #eeeeee, #ffffff);
-  border-bottom: 2px solid #050505;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 5px;
-}
-
-.art-info {
-  padding: 24px;
-}
-
-.art-info span {
+.collection-header span {
   display: block;
+  margin-bottom: 10px;
+
   color: #c91d1d;
-  font-size: 12px;
+
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 14px;
 }
 
-.art-info h3 {
-  color: #050505;
-  font-size: 18px;
+.collection-header h3 {
+  margin: 0;
+
+  font-size: clamp(24px, 3vw, 42px);
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
 
-.art-info p {
+.collection-header p {
   color: #555;
-  font-size: 14px;
+
+  font-size: 13px;
   line-height: 1.7;
+  letter-spacing: 0.5px;
 }
 
-.art-card:hover {
+/* ============================= */
+/* ARTSTATION-STYLE MASONRY */
+/* ============================= */
+
+.art-masonry {
+  columns: 3;
+  column-gap: 22px;
+}
+
+.art-piece {
+  position: relative;
+
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 0;
+
+  overflow: hidden;
+  break-inside: avoid;
+
+  border: 2px solid #050505;
+
+  background: #ededed;
+
+  cursor: zoom-in;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.art-piece img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+/*
+  Images retain their real dimensions.
+
+  Portrait images naturally become taller.
+  Landscape images naturally become wider and shorter.
+  No orientation classes are required.
+*/
+
+.piece-overlay {
+  position: absolute;
+  inset: auto 0 0;
+
+  padding: 45px 18px 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0)
+    );
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.piece-overlay strong {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.piece-overlay small {
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.art-piece:hover {
   border-color: #c91d1d;
   transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.14);
 }
 
-.art-card:hover .art-image {
-  border-bottom-color: #c91d1d;
+.art-piece:hover img {
+  transform: scale(1.025);
+  filter: brightness(0.82);
 }
 
-@media (max-width: 950px) {
-  .art-main {
-    padding: 135px 7vw 80px;
+.art-piece:hover .piece-overlay,
+.art-piece:focus-visible .piece-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.art-piece:focus-visible {
+  outline: 3px solid #c91d1d;
+  outline-offset: 3px;
+}
+
+/* ============================= */
+/* LIGHTBOX — FIXED OVERFLOW */
+/* ============================= */
+
+.art-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  overflow: hidden;
+}
+
+.art-lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-background {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  border: 0;
+
+  background: rgba(5, 5, 5, 0.94);
+
+  cursor: zoom-out;
+}
+
+/* Main window */
+.lightbox-panel {
+  position: relative;
+  z-index: 2;
+
+  width: min(1400px, 96vw);
+  height: min(900px, 92vh);
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: #090909;
+  color: #ffffff;
+
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.65);
+}
+
+/* Image and caption container */
+.lightbox-figure {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Constrains portrait and landscape images */
+.lightbox-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 80px;
+
+  overflow: hidden;
+}
+
+.lightbox-image-wrapper img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Caption stays inside the window */
+.lightbox-caption {
+  position: relative;
+  z-index: 3;
+
+  padding: 17px 24px 21px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+  background: #111111;
+}
+
+.lightbox-caption span {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #e34343;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.lightbox-caption h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.lightbox-caption p {
+  margin-top: 7px;
+
+  color: #888;
+
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  z-index: 10;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+
+  font-size: 27px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  border-color: #c91d1d;
+  background: #c91d1d;
+}
+
+/* Navigation arrows now float over the sides */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  background: rgba(0, 0, 0, 0.58);
+  color: #ffffff;
+
+  font-size: 20px;
+
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.lightbox-previous {
+  left: 14px;
+}
+
+.lightbox-next {
+  right: 14px;
+}
+
+.lightbox-arrow:hover {
+  border-color: #c91d1d;
+  background: #c91d1d;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* ============================= */
+/* LIGHTBOX MOBILE */
+/* ============================= */
+
+@media (max-width: 650px) {
+  .art-lightbox {
+    padding: 8px;
   }
 
-  .art-grid {
+  .lightbox-panel {
+    width: 100%;
+    height: 94vh;
+  }
+
+  .lightbox-image-wrapper {
+    padding: 52px 12px 14px;
+  }
+
+  .lightbox-arrow {
+    width: 34px;
+    height: 42px;
+
+    font-size: 16px;
+  }
+
+  .lightbox-previous {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+
+  .lightbox-close {
+    right: 9px;
+    top: 9px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 23px;
+  }
+
+  .lightbox-caption {
+    padding: 13px 15px 16px;
+  }
+
+  .lightbox-caption h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 1050px) {
+  .art-main {
+    padding: 130px 6vw 80px;
+  }
+
+  .art-masonry {
+    columns: 2;
+  }
+
+  .collection-header {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .art-title h2 {
@@ -154,66 +535,127 @@
   }
 }
 
+/* ============================= */
+/* MOBILE */
+/* ============================= */
 
-@media (max-width: 1100px) {
-  main {
-    padding-top: 125px !important;
-  }
-
-  h2 {
-    letter-spacing: 10px !important;
-  }
-}
-
-@media (max-width: 850px) {
-  main {
-    padding: 110px 6vw 65px !important;
-  }
-
-  h2 {
-    font-size: 34px !important;
-    letter-spacing: 7px !important;
-    line-height: 1.15 !important;
+@media (max-width: 650px) {
+  .art-main {
+    padding: 105px 16px 60px;
+    background-size: 52px 52px;
   }
 
   .back-link {
-    margin-bottom: 40px !important;
-    font-size: 12px !important;
+    margin-bottom: 38px;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .art-title {
+    margin-bottom: 52px;
+    padding: 36px 0 39px;
   }
 
   .section-label {
-    font-size: 11px !important;
-    letter-spacing: 2px !important;
+    margin-bottom: 16px;
+
+    font-size: 9px;
+    letter-spacing: 1.7px;
   }
 
-  p {
-    font-size: 14px;
+  .art-title h2 {
+    margin-bottom: 20px;
+
+    font-size: 38px;
+    letter-spacing: 8px;
   }
 
-  .ee-item,
-  .cs-item,
-  .track-item,
-  .model-item,
-  .art-card {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
+  .art-description {
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: 0.4px;
   }
 
-  .ee-actions,
-  .cs-actions,
-  .track-actions,
-  .model-meta,
-  .track-meta,
-  .cs-meta {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
+  .art-collection {
+    margin-bottom: 58px;
   }
 
-  .ee-actions a,
-  .cs-actions a,
-  .track-actions a,
-  .model-button {
+  .collection-header {
+    padding: 20px 0 22px;
+  }
+
+  .collection-header h3 {
+    font-size: 21px;
+    letter-spacing: 3px;
+  }
+
+  .collection-header p {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .art-masonry {
+    columns: 1;
+  }
+
+  .art-piece {
+    margin-bottom: 16px;
+  }
+
+  .piece-overlay {
+    padding: 35px 13px 12px;
+
+    opacity: 1;
+    transform: none;
+  }
+
+  .piece-overlay strong {
+    font-size: 9px;
+  }
+
+  .piece-overlay small {
+    font-size: 7px;
+  }
+
+  .art-lightbox {
+    padding: 8px;
+  }
+
+  .lightbox-panel {
     width: 100%;
-    min-height: 44px;
+    height: 95vh;
+
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+  }
+
+  .lightbox-image-wrapper {
+    padding: 14px 5px;
+  }
+
+  .lightbox-arrow {
+    width: 32px;
+    height: 42px;
+
+    font-size: 15px;
+  }
+
+  .lightbox-close {
+    right: 9px;
+    top: 9px;
+
+    width: 37px;
+    height: 37px;
+
+    font-size: 22px;
+  }
+
+  .lightbox-caption {
+    padding: 13px 15px 16px;
+  }
+
+  .lightbox-caption h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
   }
 }
