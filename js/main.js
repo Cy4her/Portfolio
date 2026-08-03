@@ -1,56 +1,85 @@
+"use strict";
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
   const navbar = document.querySelector(".navbar");
 
-  if (navbar && !navbar.querySelector(".menu-toggle")) {
-    const toggle = document.createElement("button");
-    toggle.className = "menu-toggle";
-    toggle.setAttribute("aria-label", "Toggle navigation");
-    toggle.innerHTML = "<span></span><span></span><span></span>";
-    navbar.appendChild(toggle);
-
-    toggle.addEventListener("click", () => {
-      navbar.classList.toggle("menu-open");
-      document.body.classList.toggle("menu-open");
-    });
+  if (!navbar) {
+    return;
   }
 
-  document.querySelectorAll("a[href]").forEach((link) => {
-    const href = link.getAttribute("href");
+  let menuToggle = navbar.querySelector(".menu-toggle");
+  const navigation = navbar.querySelector("nav");
 
-    const isNormalPageLink =
-      href &&
-      !href.startsWith("#") &&
-      !href.startsWith("mailto:") &&
-      !href.startsWith("http") &&
-      !href.includes(".pdf") &&
-      link.target !== "_blank";
+  if (!navigation) {
+    return;
+  }
 
-    if (isNormalPageLink) {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
+  /*
+    Create the hamburger button automatically
+    if it is not already present in the HTML.
+  */
+  if (!menuToggle) {
+    menuToggle = document.createElement("button");
 
-        if (navbar) navbar.classList.remove("menu-open");
-        document.body.classList.remove("menu-open");
+    menuToggle.className = "menu-toggle";
+    menuToggle.type = "button";
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    menuToggle.setAttribute("aria-expanded", "false");
 
-        document.body.classList.remove("loaded");
+    menuToggle.innerHTML = `
+      <span></span>
+      <span></span>
+      <span></span>
+    `;
 
-        setTimeout(() => {
-          window.location.href = href;
-        }, 300);
-      });
+    navbar.appendChild(menuToggle);
+  }
+
+  function openMenu() {
+    navbar.classList.add("menu-open");
+    document.body.classList.add("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close navigation menu");
+  }
+
+  function closeMenu() {
+    navbar.classList.remove("menu-open");
+    document.body.classList.remove("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+  }
+
+  function toggleMenu() {
+    if (navbar.classList.contains("menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  menuToggle.addEventListener("click", toggleMenu);
+
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      navbar.classList.contains("menu-open")
+    ) {
+      closeMenu();
+      menuToggle.focus();
     }
   });
-});
 
-/* Fix blank page when using phone/browser back button */
-window.addEventListener("pageshow", () => {
-  document.body.classList.add("loaded");
-  document.body.classList.remove("menu-open");
-
-  const navbar = document.querySelector(".navbar");
-  if (navbar) {
-    navbar.classList.remove("menu-open");
-  }
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 850) {
+      closeMenu();
+    }
+  });
 });

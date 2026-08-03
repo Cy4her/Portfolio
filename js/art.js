@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "[data-close-lightbox]"
   );
 
+  const mobileQuery = window.matchMedia("(max-width: 650px)");
+
   let currentArtworkIndex = 0;
+  let selectedArtwork = null;
   let lastFocusedElement = null;
 
   if (
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     !lightboxTitle ||
     !lightboxCategory
   ) {
-    console.warn("Artwork gallery elements are missing.");
+    console.warn("Artwork gallery or lightbox elements are missing.");
     return;
   }
 
@@ -56,9 +59,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function clearSelection() {
+    artworkButtons.forEach((button) => {
+      button.classList.remove("is-selected");
+    });
+
+    selectedArtwork = null;
+  }
+
   function openLightbox(index, triggerElement) {
     lastFocusedElement = triggerElement;
 
+    clearSelection();
     showArtwork(index);
 
     lightbox.hidden = false;
@@ -85,7 +97,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   artworkButtons.forEach((button, index) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      /*
+        Desktop:
+        Clicking opens the lightbox immediately.
+      */
+      if (!mobileQuery.matches) {
+        openLightbox(index, button);
+        return;
+      }
+
+      /*
+        Mobile:
+        First tap selects the image and shows its overlay.
+        Second tap opens the full image.
+      */
+      if (selectedArtwork !== button) {
+        event.preventDefault();
+
+        clearSelection();
+
+        button.classList.add("is-selected");
+        selectedArtwork = button;
+
+        return;
+      }
+
       openLightbox(index, button);
     });
   });
@@ -104,6 +141,18 @@ document.addEventListener("DOMContentLoaded", () => {
     showNextArtwork
   );
 
+  document.addEventListener("click", (event) => {
+    if (!mobileQuery.matches || !selectedArtwork) {
+      return;
+    }
+
+    const clickedArtwork = event.target.closest(".art-piece");
+
+    if (!clickedArtwork) {
+      clearSelection();
+    }
+  });
+
   document.addEventListener("keydown", (event) => {
     if (lightbox.hidden) {
       return;
@@ -121,4 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
       showNextArtwork();
     }
   });
+
+  mobileQuery.addEventListener("change", clearSelection);
 });
