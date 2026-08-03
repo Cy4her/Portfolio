@@ -86,7 +86,7 @@
   width: 10px;
   height: 10px;
 
-  background: #050505;
+  background: currentColor;
   border-radius: 50%;
 
   transform: translateX(-50%);
@@ -101,7 +101,7 @@
   height: 66px;
   margin: 30px auto 0;
 
-  background: #050505;
+  background: currentColor;
 }
 
 /* ============================= */
@@ -134,9 +134,9 @@
 }
 
 /*
-  Inner white surface.
-  This creates one continuous clean border,
-  including the angled upper-left corner.
+  Inner white layer creates one continuous border.
+  This prevents the angled corner from separating
+  when the browser is zoomed.
 */
 
 .project-box::before {
@@ -227,6 +227,7 @@
   color: #111111;
 
   font-size: 15px;
+  line-height: 1.45;
   letter-spacing: 1.5px;
 }
 
@@ -304,7 +305,7 @@
 }
 
 /* ============================= */
-/* ART FACE */
+/* ART */
 /* ============================= */
 
 .art-face {
@@ -375,7 +376,7 @@
 }
 
 /* ============================= */
-/* MUSIC ART */
+/* MUSIC */
 /* ============================= */
 
 .music-art {
@@ -430,7 +431,7 @@
 }
 
 /* ============================= */
-/* ELECTRICAL ART */
+/* ELECTRICAL */
 /* ============================= */
 
 .circuit-art {
@@ -506,7 +507,7 @@
 }
 
 /* ============================= */
-/* COMPUTER SCIENCE ART */
+/* COMPUTER SCIENCE */
 /* ============================= */
 
 .code-art {
@@ -545,7 +546,7 @@
 }
 
 /* ============================= */
-/* AI ART */
+/* AI */
 /* ============================= */
 
 .ai-art {
@@ -758,33 +759,67 @@
     width: min(94%, 400px);
     margin: 0 auto;
 
-    gap: 30px;
+    gap: 38px;
   }
 
   .project-card {
     width: 100%;
 
-    padding-left: 38px;
+    padding-left: 40px;
   }
+
+  /* Mobile project number */
 
   .project-index {
     display: block;
 
     left: 0;
-    top: 50%;
+    top: 20px;
     z-index: 10;
+
+    width: 30px;
 
     font-size: 15px;
     font-weight: 900;
     line-height: 1;
     letter-spacing: 0.5px;
+    text-align: center;
 
-    transform: translateY(-50%);
+    transform: none;
   }
 
-  .project-index::before,
+  /* Colored dot below the number */
+
+  .project-index::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 27px;
+
+    display: block;
+
+    width: 7px;
+    height: 7px;
+
+    background: currentColor;
+    border-radius: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  /* Colored vertical line */
+
   .project-index::after {
-    display: none;
+    content: "";
+
+    display: block;
+
+    width: 1px;
+    height: 43px;
+    margin: 22px auto 0;
+
+    background: currentColor;
   }
 
   .project-box {
@@ -808,16 +843,15 @@
     max-width: 225px;
   }
 
-  .small-line {
-    width: 22px;
-    height: 2px;
+  /* Remove the dash above project names on mobile */
 
-    margin-bottom: 9px;
+  .small-line {
+    display: none;
   }
 
   .project-text h3 {
     max-width: 195px;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 
     font-size: 14px;
     line-height: 1.18;
@@ -889,15 +923,31 @@
   .project-list {
     width: min(95%, 355px);
 
-    gap: 27px;
+    gap: 34px;
   }
 
   .project-card {
-    padding-left: 34px;
+    padding-left: 36px;
   }
 
   .project-index {
+    top: 18px;
+
+    width: 27px;
+
     font-size: 14px;
+  }
+
+  .project-index::before {
+    top: 25px;
+
+    width: 6px;
+    height: 6px;
+  }
+
+  .project-index::after {
+    height: 39px;
+    margin-top: 20px;
   }
 
   .project-box {
