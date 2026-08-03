@@ -709,18 +709,19 @@
   }
 }
 
+
 /* ============================= */
-/* MOBILE */
+/* PROJECTS PAGE — MOBILE */
 /* ============================= */
 
 @media (max-width: 650px) {
   .projects-main {
-    padding: 105px 0 72px;
+    padding: 105px 0 68px;
   }
 
   .projects-title {
-    margin-bottom: 52px;
-    padding: 0 24px;
+    margin-bottom: 48px;
+    padding: 0 22px;
   }
 
   .projects-title h2 {
@@ -732,29 +733,34 @@
   .projects-title span {
     width: 34px;
     height: 2px;
-
     margin: 18px auto;
   }
 
   .projects-title p {
-    max-width: 290px;
+    max-width: 300px;
     margin: 0 auto;
 
     font-size: 11px;
-    line-height: 1.65;
-    letter-spacing: 0.5px;
+    line-height: 1.6;
+    letter-spacing: 0.45px;
   }
 
+  /*
+    Slightly wider cards,
+    a little shorter,
+    and more balanced spacing.
+  */
+
   .project-list {
-    width: min(88%, 350px);
+    width: min(94%, 390px);
     margin: 0 auto;
 
-    gap: 34px;
+    gap: 28px;
   }
 
   .project-card {
     width: 100%;
-    padding-left: 28px;
+    padding-left: 34px;
   }
 
   .project-index {
@@ -764,10 +770,10 @@
     top: 50%;
     z-index: 10;
 
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 900;
     line-height: 1;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.5px;
 
     transform: translateY(-50%);
   }
@@ -781,84 +787,85 @@
     --angle: 22px;
 
     width: 100%;
-    height: 116px;
-    min-height: 116px;
+    height: 98px;
+    min-height: 98px;
 
-    padding: 20px 66px 18px 26px;
+    padding: 15px 70px 14px 28px;
 
+    display: flex;
     align-items: center;
 
     overflow: hidden;
   }
 
   .project-box::before {
-    height: 123px;
+    height: 105px;
 
     transform: rotate(12deg);
   }
 
   .project-text {
     width: 100%;
-    max-width: 210px;
+    max-width: 225px;
   }
 
   .small-line {
-    width: 20px;
+    width: 22px;
     height: 2px;
 
-    margin-bottom: 11px;
+    margin-bottom: 9px;
   }
 
   .project-text h3 {
-    max-width: 180px;
-    margin-bottom: 8px;
+    max-width: 195px;
+    margin-bottom: 7px;
 
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.18;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.7px;
   }
 
   .project-text p {
-    max-width: 190px;
+    max-width: 205px;
 
-    font-size: 8px;
-    line-height: 1.4;
+    font-size: 9px;
+    line-height: 1.35;
     letter-spacing: 0.25px;
 
     white-space: normal;
   }
 
   .project-art {
-    right: -42px;
+    right: -38px;
 
-    opacity: 0.18;
+    opacity: 0.2;
 
-    transform: scale(0.32);
+    transform: scale(0.3);
     transform-origin: center right;
   }
 
   .cube-art {
-    top: -38px;
+    top: -42px;
   }
 
   .art-face {
-    top: -25px;
+    top: -28px;
   }
 
   .music-art {
-    top: -19px;
+    top: -21px;
   }
 
   .circuit-art {
-    top: -16px;
+    top: -18px;
   }
 
   .code-art {
-    top: 6px;
+    top: 4px;
   }
 
   .ai-art {
-    top: -3px;
+    top: -5px;
   }
 
   .project-card:active .project-fill {
@@ -881,44 +888,44 @@
   }
 
   .project-list {
-    width: min(90%, 320px);
-    gap: 30px;
+    width: min(95%, 350px);
+    gap: 25px;
   }
 
   .project-card {
-    padding-left: 25px;
+    padding-left: 31px;
   }
 
   .project-box {
-    height: 108px;
-    min-height: 108px;
+    height: 92px;
+    min-height: 92px;
 
-    padding-left: 23px;
-    padding-right: 55px;
+    padding-left: 24px;
+    padding-right: 60px;
   }
 
   .project-box::before {
-    height: 115px;
+    height: 99px;
   }
 
   .project-index {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .project-text h3 {
-    font-size: 11px;
-    letter-spacing: 1.2px;
+    font-size: 13px;
+    letter-spacing: 1.4px;
   }
 
   .project-text p {
-    font-size: 7.5px;
+    font-size: 8.5px;
   }
 
   .project-art {
-    right: -52px;
+    right: -48px;
 
-    opacity: 0.16;
+    opacity: 0.18;
 
-    transform: scale(0.28);
+    transform: scale(0.27);
   }
 }
