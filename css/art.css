@@ -1,6 +1,5 @@
 .art-page {
   width: 100%;
-
   overflow-x: hidden;
 
   background: #ffffff;
@@ -105,7 +104,6 @@
 
 .art-collection {
   width: 100%;
-
   margin-bottom: 90px;
 
   border-top: 2px solid #050505;
@@ -122,7 +120,6 @@
 
 .collection-header span {
   display: block;
-
   margin-bottom: 10px;
 
   color: #c91d1d;
@@ -152,7 +149,7 @@
 }
 
 /* ============================= */
-/* MASONRY GALLERY */
+/* ARTSTATION MASONRY */
 /* ============================= */
 
 .art-masonry {
@@ -199,11 +196,15 @@
     filter 0.4s ease;
 }
 
+/* ============================= */
+/* IMAGE OVERLAY */
+/* ============================= */
+
 .piece-overlay {
   position: absolute;
   inset: auto 0 0;
 
-  padding: 45px 18px 16px;
+  padding: 46px 18px 16px;
 
   display: flex;
   flex-direction: column;
@@ -214,22 +215,30 @@
   background:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0)
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.56) 55%,
+      transparent 100%
     );
 
   opacity: 0;
+  visibility: hidden;
   transform: translateY(8px);
 
+  pointer-events: none;
+
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
 }
 
 .piece-overlay strong {
   margin-bottom: 4px;
 
+  color: #ffffff;
+
   font-size: 12px;
+  line-height: 1.3;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -238,6 +247,7 @@
   color: rgba(255, 255, 255, 0.78);
 
   font-size: 8px;
+  line-height: 1.3;
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
@@ -258,9 +268,15 @@
 }
 
 .art-piece:hover .piece-overlay,
-.art-piece:focus-visible .piece-overlay {
+.art-piece:focus-visible .piece-overlay,
+.art-piece.is-selected .piece-overlay {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
+}
+
+.art-piece.is-selected img {
+  filter: brightness(0.8);
 }
 
 .art-piece:focus-visible {
@@ -380,7 +396,6 @@
 
 .lightbox-caption span {
   display: block;
-
   margin-bottom: 7px;
 
   color: #e34343;
@@ -434,7 +449,6 @@
 
 .lightbox-close:hover {
   border-color: #c91d1d;
-
   background: #c91d1d;
 }
 
@@ -468,7 +482,6 @@
 
 .lightbox-arrow:hover {
   border-color: #c91d1d;
-
   background: #c91d1d;
 }
 
@@ -497,17 +510,18 @@
 
 /* ============================= */
 /* MOBILE */
+/* Two-column ArtStation layout */
 /* ============================= */
 
 @media (max-width: 650px) {
   .art-main {
-    padding: 100px 16px 60px;
+    padding: 100px 14px 58px;
 
     background-size: 48px 48px;
   }
 
   .art-page .back-link {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
     font-size: 9px;
     line-height: 1.4;
@@ -515,12 +529,12 @@
   }
 
   .art-title {
-    margin-bottom: 46px;
-    padding: 30px 0 33px;
+    margin-bottom: 42px;
+    padding: 28px 0 31px;
   }
 
   .art-page .section-label {
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
     font-size: 8px;
     line-height: 1.4;
@@ -528,9 +542,9 @@
   }
 
   .art-title h2 {
-    margin-bottom: 17px;
+    margin-bottom: 16px;
 
-    font-size: 34px;
+    font-size: 33px;
     line-height: 1;
     letter-spacing: 6px;
   }
@@ -539,64 +553,60 @@
     max-width: 100%;
 
     font-size: 10px;
-    line-height: 1.6;
-    letter-spacing: 0.25px;
+    line-height: 1.55;
+    letter-spacing: 0.2px;
   }
 
   .art-collection {
-    margin-bottom: 54px;
+    margin-bottom: 50px;
   }
 
   .collection-header {
     display: block;
 
-    padding: 18px 0 20px;
+    padding: 17px 0 18px;
   }
 
   .collection-header > div {
-    margin-bottom: 11px;
+    margin-bottom: 9px;
   }
 
   .collection-header span {
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 
-    font-size: 8px;
-    line-height: 1.4;
-    letter-spacing: 1.2px;
+    font-size: 7px;
+    letter-spacing: 1.1px;
   }
 
   .collection-header h3 {
     margin: 0;
 
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.2;
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
   }
 
   .collection-header p {
-    max-width: 100%;
+    max-width: 330px;
 
-    color: #555555;
-
-    font-size: 10px;
-    line-height: 1.55;
-    letter-spacing: 0.15px;
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
   }
 
+  /*
+    Two columns gives a desktop-like ArtStation appearance.
+    Images retain their original aspect ratios.
+  */
   .art-masonry {
-    width: 100%;
-
-    columns: 1;
-    column-gap: 0;
+    columns: 2;
+    column-gap: 9px;
   }
 
   .art-piece {
-    display: block;
-
     width: 100%;
-    max-width: 100%;
 
-    margin: 0 0 18px;
+    margin: 0 0 9px;
 
     border-width: 1px;
 
@@ -609,56 +619,45 @@
   }
 
   .art-piece img {
-    display: block;
-
     width: 100%;
     height: auto;
-    max-width: 100%;
 
     object-fit: contain;
   }
 
+  /*
+    Hidden by default.
+    art.js applies .is-selected after the first tap.
+  */
   .piece-overlay {
-    position: relative;
-    inset: auto;
+    padding: 34px 9px 8px;
 
-    min-height: 48px;
-    padding: 9px 12px 10px;
-
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-    gap: 6px;
-
-    opacity: 1;
-    transform: none;
-
-    background: #ffffff;
-    color: #050505;
-
-    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
   }
 
   .piece-overlay strong {
-    margin: 0;
+    margin-bottom: 2px;
 
-    color: #050505;
-
-    font-size: 12px;
-    line-height: 1.3;
-    letter-spacing: 0.3px;
-    text-transform: none;
+    font-size: 8px;
+    line-height: 1.25;
+    letter-spacing: 0.7px;
   }
 
   .piece-overlay small {
-    color: #444444;
-
-    font-size: 10px;
-    line-height: 1.3;
-    letter-spacing: 0;
-    text-transform: none;
+    font-size: 6px;
+    line-height: 1.25;
+    letter-spacing: 0.7px;
   }
+
+  .art-piece.is-selected .piece-overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Lightbox */
 
   .art-lightbox {
     padding: 6px;
@@ -668,12 +667,10 @@
     width: 100%;
     height: 94dvh;
     max-height: 94dvh;
-
-    overflow: hidden;
   }
 
   .lightbox-image-wrapper {
-    padding: 50px 8px 10px;
+    padding: 48px 7px 10px;
   }
 
   .lightbox-close {
@@ -687,44 +684,44 @@
   }
 
   .lightbox-arrow {
-    width: 31px;
-    height: 42px;
+    width: 30px;
+    height: 40px;
 
-    font-size: 15px;
+    font-size: 14px;
 
     background: rgba(0, 0, 0, 0.72);
   }
 
   .lightbox-previous {
-    left: 6px;
+    left: 5px;
   }
 
   .lightbox-next {
-    right: 6px;
+    right: 5px;
   }
 
   .lightbox-caption {
-    padding: 12px 14px 14px;
+    padding: 11px 13px 13px;
   }
 
   .lightbox-caption span {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
     font-size: 7px;
-    letter-spacing: 1.1px;
+    letter-spacing: 1px;
   }
 
   .lightbox-caption h3 {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.35;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
   }
 
   .lightbox-caption p {
-    margin-top: 5px;
+    margin-top: 4px;
 
     font-size: 7px;
-    letter-spacing: 0.9px;
+    letter-spacing: 0.8px;
   }
 }
 
@@ -732,33 +729,30 @@
 /* VERY SMALL PHONES */
 /* ============================= */
 
-@media (max-width: 390px) {
+@media (max-width: 360px) {
   .art-main {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .art-title h2 {
-    font-size: 31px;
-    letter-spacing: 5px;
+  .art-masonry {
+    columns: 1;
+    column-gap: 0;
   }
 
-  .collection-header h3 {
-    font-size: 18px;
-    letter-spacing: 1.7px;
+  .art-piece {
+    margin-bottom: 12px;
   }
 
   .piece-overlay {
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+    padding: 40px 12px 10px;
   }
 
   .piece-overlay strong {
-    font-size: 11px;
+    font-size: 9px;
   }
 
   .piece-overlay small {
-    font-size: 9px;
+    font-size: 7px;
   }
 }

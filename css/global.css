@@ -5,7 +5,7 @@
 :root {
   --black: #050505;
   --white: #ffffff;
-  --gray: #777;
+  --gray: #777777;
   --line: rgba(0, 0, 0, 0.18);
   --gold: #d99a32;
   --blue: #246bff;
@@ -42,7 +42,7 @@ body {
   color: var(--black);
 
   opacity: 0;
-  transition: opacity 0.45s ease;
+  transition: opacity 0.4s ease;
 }
 
 body.loaded {
@@ -109,7 +109,7 @@ button {
 
 .brand {
   position: relative;
-  z-index: 300;
+  z-index: 310;
 
   min-width: 360px;
 
@@ -198,7 +198,7 @@ button {
 
 .menu-toggle {
   position: relative;
-  z-index: 300;
+  z-index: 310;
 
   display: none;
 
@@ -289,10 +289,6 @@ button {
 /* ============================= */
 
 @media (max-width: 1100px) {
-  html {
-    font-size: 92%;
-  }
-
   .navbar {
     height: 92px;
     padding: 22px 30px;
@@ -343,14 +339,13 @@ button {
 
 /* ============================= */
 /* MOBILE NAVIGATION */
+/* Fade instead of sliding */
 /* ============================= */
 
 @media (max-width: 850px) {
   .navbar {
     height: 78px;
     padding: 16px 24px;
-
-    overflow: visible;
   }
 
   .brand {
@@ -378,41 +373,47 @@ button {
 
   .navbar nav {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    z-index: 250;
 
-    width: min(82vw, 340px);
+    width: 100%;
     height: 100dvh;
 
-    padding: 110px 30px 40px;
+    padding: 100px 24px 40px;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 26px;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
 
     white-space: normal;
 
-    background: rgba(5, 5, 5, 0.98);
+    background: rgba(5, 5, 5, 0.97);
     color: #ffffff;
 
-    transform: translateX(100%);
+    opacity: 0;
     visibility: hidden;
     pointer-events: none;
 
-    transition:
-      transform 0.35s ease,
-      visibility 0.35s ease;
+    /*
+      No translateX here.
+      The menu fades instead of sliding.
+    */
+    transform: scale(1.015);
 
-    z-index: 250;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
   }
 
   .navbar.menu-open nav {
-    transform: translateX(0);
+    opacity: 1;
     visibility: visible;
     pointer-events: auto;
+
+    transform: scale(1);
   }
 
   .navbar.menu-open {
@@ -422,14 +423,15 @@ button {
   }
 
   .navbar nav a {
-    width: 100%;
-    padding-bottom: 10px;
+    width: auto;
+    padding-bottom: 9px;
 
     color: #ffffff;
 
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
+    text-align: center;
   }
 
   .page-title {
@@ -447,10 +449,6 @@ button {
 /* ============================= */
 
 @media (max-width: 650px) {
-  html {
-    font-size: 100%;
-  }
-
   .navbar {
     padding: 16px 20px;
   }
@@ -461,14 +459,12 @@ button {
   }
 
   .navbar nav {
-    width: min(84vw, 320px);
-    padding: 100px 24px 32px;
-    gap: 22px;
+    gap: 25px;
   }
 
   .navbar nav a {
-    font-size: 15px;
-    letter-spacing: 3px;
+    font-size: 16px;
+    letter-spacing: 4px;
   }
 
   .page-title {
