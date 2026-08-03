@@ -1,4 +1,8 @@
 .art-page {
+  width: 100%;
+
+  overflow-x: hidden;
+
   background: #ffffff;
   color: #050505;
 }
@@ -12,8 +16,12 @@
 /* ============================= */
 
 .art-main {
+  width: 100%;
   min-height: 100vh;
+
   padding: 150px 8vw 100px;
+
+  overflow-x: hidden;
 
   background:
     linear-gradient(
@@ -30,8 +38,9 @@
   background-size: 80px 80px;
 }
 
-.back-link {
+.art-page .back-link {
   display: inline-block;
+
   margin-bottom: 70px;
 
   color: #050505;
@@ -42,8 +51,9 @@
   text-transform: uppercase;
 }
 
-.back-link:hover {
+.art-page .back-link:hover {
   color: #c91d1d;
+
   transform: translateX(-4px);
 }
 
@@ -59,7 +69,7 @@
   border-bottom: 2px solid #050505;
 }
 
-.section-label {
+.art-page .section-label {
   margin-bottom: 22px;
 
   color: #c91d1d;
@@ -82,7 +92,7 @@
 .art-description {
   max-width: 650px;
 
-  color: #333;
+  color: #333333;
 
   font-size: 18px;
   line-height: 1.8;
@@ -94,6 +104,8 @@
 /* ============================= */
 
 .art-collection {
+  width: 100%;
+
   margin-bottom: 90px;
 
   border-top: 2px solid #050505;
@@ -110,6 +122,7 @@
 
 .collection-header span {
   display: block;
+
   margin-bottom: 10px;
 
   color: #c91d1d;
@@ -125,12 +138,13 @@
 
   font-size: clamp(24px, 3vw, 42px);
   font-weight: 900;
+  line-height: 1.15;
   letter-spacing: 5px;
   text-transform: uppercase;
 }
 
 .collection-header p {
-  color: #555;
+  color: #555555;
 
   font-size: 13px;
   line-height: 1.7;
@@ -138,10 +152,12 @@
 }
 
 /* ============================= */
-/* ARTSTATION-STYLE MASONRY */
+/* MASONRY GALLERY */
 /* ============================= */
 
 .art-masonry {
+  width: 100%;
+
   columns: 3;
   column-gap: 22px;
 }
@@ -150,7 +166,10 @@
   position: relative;
 
   display: inline-block;
+
   width: 100%;
+  max-width: 100%;
+
   margin: 0 0 22px;
   padding: 0;
 
@@ -179,14 +198,6 @@
     transform 0.4s ease,
     filter 0.4s ease;
 }
-
-/*
-  Images retain their real dimensions.
-
-  Portrait images naturally become taller.
-  Landscape images naturally become wider and shorter.
-  No orientation classes are required.
-*/
 
 .piece-overlay {
   position: absolute;
@@ -233,6 +244,7 @@
 
 .art-piece:hover {
   border-color: #c91d1d;
+
   transform: translateY(-4px);
 
   box-shadow:
@@ -241,6 +253,7 @@
 
 .art-piece:hover img {
   transform: scale(1.025);
+
   filter: brightness(0.82);
 }
 
@@ -256,7 +269,7 @@
 }
 
 /* ============================= */
-/* LIGHTBOX — FIXED OVERFLOW */
+/* LIGHTBOX */
 /* ============================= */
 
 .art-lightbox {
@@ -269,6 +282,7 @@
   justify-content: center;
 
   padding: 20px;
+
   overflow: hidden;
 }
 
@@ -291,7 +305,6 @@
   cursor: zoom-out;
 }
 
-/* Main window */
 .lightbox-panel {
   position: relative;
   z-index: 2;
@@ -306,13 +319,14 @@
   background: #090909;
   color: #ffffff;
 
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.65);
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.65);
 }
 
-/* Image and caption container */
 .lightbox-figure {
   width: 100%;
   height: 100%;
+
   min-width: 0;
   min-height: 0;
 
@@ -320,21 +334,22 @@
   grid-template-rows: minmax(0, 1fr) auto;
 
   margin: 0;
+
   overflow: hidden;
 }
 
-/* Constrains portrait and landscape images */
 .lightbox-image-wrapper {
   width: 100%;
   height: 100%;
+
   min-width: 0;
   min-height: 0;
+
+  padding: 24px 80px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 24px 80px;
 
   overflow: hidden;
 }
@@ -352,7 +367,6 @@
   object-position: center;
 }
 
-/* Caption stays inside the window */
 .lightbox-caption {
   position: relative;
   z-index: 3;
@@ -366,6 +380,7 @@
 
 .lightbox-caption span {
   display: block;
+
   margin-bottom: 7px;
 
   color: #e34343;
@@ -382,6 +397,7 @@
   color: #ffffff;
 
   font-size: 18px;
+  line-height: 1.3;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -389,14 +405,13 @@
 .lightbox-caption p {
   margin-top: 7px;
 
-  color: #888;
+  color: #888888;
 
   font-size: 9px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
-/* Close button */
 .lightbox-close {
   position: absolute;
   right: 16px;
@@ -419,10 +434,10 @@
 
 .lightbox-close:hover {
   border-color: #c91d1d;
+
   background: #c91d1d;
 }
 
-/* Navigation arrows now float over the sides */
 .lightbox-arrow {
   position: absolute;
   top: 50%;
@@ -439,6 +454,7 @@
   font-size: 20px;
 
   transform: translateY(-50%);
+
   cursor: pointer;
 }
 
@@ -452,64 +468,8 @@
 
 .lightbox-arrow:hover {
   border-color: #c91d1d;
+
   background: #c91d1d;
-}
-
-body.lightbox-open {
-  overflow: hidden;
-}
-
-/* ============================= */
-/* LIGHTBOX MOBILE */
-/* ============================= */
-
-@media (max-width: 650px) {
-  .art-lightbox {
-    padding: 8px;
-  }
-
-  .lightbox-panel {
-    width: 100%;
-    height: 94vh;
-  }
-
-  .lightbox-image-wrapper {
-    padding: 52px 12px 14px;
-  }
-
-  .lightbox-arrow {
-    width: 34px;
-    height: 42px;
-
-    font-size: 16px;
-  }
-
-  .lightbox-previous {
-    left: 8px;
-  }
-
-  .lightbox-next {
-    right: 8px;
-  }
-
-  .lightbox-close {
-    right: 9px;
-    top: 9px;
-
-    width: 38px;
-    height: 38px;
-
-    font-size: 23px;
-  }
-
-  .lightbox-caption {
-    padding: 13px 15px 16px;
-  }
-
-  .lightbox-caption h3 {
-    font-size: 14px;
-    letter-spacing: 2px;
-  }
 }
 
 /* ============================= */
@@ -535,45 +495,40 @@ body.lightbox-open {
   }
 }
 
-/* =========================================
-   ART PAGE — MOBILE FIX
-   Replace your old mobile media query
-   ========================================= */
+/* ============================= */
+/* MOBILE */
+/* ============================= */
 
 @media (max-width: 650px) {
-
-  /* Page spacing */
   .art-main {
-    min-height: 100vh;
-    padding: 105px 14px 55px;
+    padding: 100px 16px 60px;
+
     background-size: 48px 48px;
-    overflow-x: hidden;
   }
 
-  /* Back button */
-  .back-link {
-    margin-bottom: 32px;
+  .art-page .back-link {
+    margin-bottom: 30px;
 
     font-size: 9px;
     line-height: 1.4;
     letter-spacing: 1.2px;
   }
 
-  /* Main art heading */
   .art-title {
-    margin-bottom: 44px;
-    padding: 30px 0 32px;
+    margin-bottom: 46px;
+    padding: 30px 0 33px;
   }
 
-  .section-label {
-    margin-bottom: 14px;
+  .art-page .section-label {
+    margin-bottom: 13px;
 
     font-size: 8px;
+    line-height: 1.4;
     letter-spacing: 1.4px;
   }
 
   .art-title h2 {
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
     font-size: 34px;
     line-height: 1;
@@ -588,9 +543,8 @@ body.lightbox-open {
     letter-spacing: 0.25px;
   }
 
-  /* Collection section */
   .art-collection {
-    margin-bottom: 52px;
+    margin-bottom: 54px;
   }
 
   .collection-header {
@@ -600,32 +554,38 @@ body.lightbox-open {
   }
 
   .collection-header > div {
-    margin-bottom: 12px;
+    margin-bottom: 11px;
   }
 
   .collection-header span {
     margin-bottom: 7px;
 
     font-size: 8px;
-    letter-spacing: 1.3px;
+    line-height: 1.4;
+    letter-spacing: 1.2px;
   }
 
   .collection-header h3 {
-    font-size: 19px;
+    margin: 0;
+
+    font-size: 20px;
     line-height: 1.2;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
   }
 
   .collection-header p {
     max-width: 100%;
 
-    font-size: 9px;
+    color: #555555;
+
+    font-size: 10px;
     line-height: 1.55;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.15px;
   }
 
-  /* One artwork per row */
   .art-masonry {
+    width: 100%;
+
     columns: 1;
     column-gap: 0;
   }
@@ -634,64 +594,74 @@ body.lightbox-open {
     display: block;
 
     width: 100%;
-    margin: 0 0 16px;
+    max-width: 100%;
 
-    border-width: 1.5px;
+    margin: 0 0 18px;
+
+    border-width: 1px;
 
     transform: none;
   }
 
   .art-piece:hover {
     transform: none;
+    box-shadow: none;
   }
 
-  /* Natural image proportions */
   .art-piece img {
     display: block;
 
     width: 100%;
     height: auto;
-    max-height: none;
+    max-width: 100%;
 
     object-fit: contain;
   }
 
-  /* Always show title on mobile */
   .piece-overlay {
-    position: absolute;
-    inset: auto 0 0;
+    position: relative;
+    inset: auto;
 
-    padding: 34px 12px 11px;
+    min-height: 48px;
+    padding: 9px 12px 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
 
     opacity: 1;
     transform: none;
 
-    background:
-      linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.88),
-        rgba(0, 0, 0, 0)
-      );
+    background: #ffffff;
+    color: #050505;
+
+    text-align: center;
   }
 
   .piece-overlay strong {
-    margin-bottom: 3px;
+    margin: 0;
 
-    font-size: 9px;
+    color: #050505;
+
+    font-size: 12px;
     line-height: 1.3;
-    letter-spacing: 1.1px;
+    letter-spacing: 0.3px;
+    text-transform: none;
   }
 
   .piece-overlay small {
-    font-size: 7px;
+    color: #444444;
+
+    font-size: 10px;
     line-height: 1.3;
-    letter-spacing: 1px;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
-  /* Lightbox */
   .art-lightbox {
     padding: 6px;
-    overflow: hidden;
   }
 
   .lightbox-panel {
@@ -700,51 +670,12 @@ body.lightbox-open {
     max-height: 94dvh;
 
     overflow: hidden;
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .lightbox-figure {
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
-
-    display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
-
-    overflow: hidden;
   }
 
   .lightbox-image-wrapper {
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
-
     padding: 50px 8px 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
   }
 
-  .lightbox-image-wrapper img {
-    display: block;
-
-    width: auto;
-    height: auto;
-
-    max-width: 100%;
-    max-height: 100%;
-
-    object-fit: contain;
-    object-position: center;
-  }
-
-  /* Close button */
   .lightbox-close {
     top: 8px;
     right: 8px;
@@ -755,16 +686,13 @@ body.lightbox-open {
     font-size: 21px;
   }
 
-  /* Arrows */
   .lightbox-arrow {
-    top: 50%;
-
-    width: 32px;
-    height: 40px;
+    width: 31px;
+    height: 42px;
 
     font-size: 15px;
 
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.72);
   }
 
   .lightbox-previous {
@@ -775,7 +703,6 @@ body.lightbox-open {
     right: 6px;
   }
 
-  /* Caption */
   .lightbox-caption {
     padding: 12px 14px 14px;
   }
@@ -784,55 +711,54 @@ body.lightbox-open {
     margin-bottom: 5px;
 
     font-size: 7px;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.1px;
   }
 
   .lightbox-caption h3 {
     font-size: 12px;
     line-height: 1.35;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
   }
 
   .lightbox-caption p {
     margin-top: 5px;
 
     font-size: 7px;
-    letter-spacing: 1px;
+    letter-spacing: 0.9px;
   }
 }
 
-
-/* =========================================
-   VERY SMALL PHONES
-   ========================================= */
+/* ============================= */
+/* VERY SMALL PHONES */
+/* ============================= */
 
 @media (max-width: 390px) {
-
   .art-main {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .art-title h2 {
-    font-size: 30px;
+    font-size: 31px;
     letter-spacing: 5px;
   }
 
   .collection-header h3 {
-    font-size: 17px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    letter-spacing: 1.7px;
   }
 
-  .lightbox-image-wrapper {
-    padding-left: 4px;
-    padding-right: 4px;
+  .piece-overlay {
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
   }
 
-  .lightbox-arrow {
-    width: 28px;
-  }
-
-  .lightbox-caption h3 {
+  .piece-overlay strong {
     font-size: 11px;
+  }
+
+  .piece-overlay small {
+    font-size: 9px;
   }
 }
