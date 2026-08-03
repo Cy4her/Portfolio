@@ -34,7 +34,7 @@
 }
 
 .projects-title p {
-  color: #666;
+  color: #666666;
 
   font-size: 18px;
   line-height: 1.7;
@@ -128,7 +128,6 @@
       100% 0 / 2px 100% no-repeat;
 }
 
-/* Angled left border */
 .project-box::before {
   content: "";
   position: absolute;
@@ -146,7 +145,10 @@
   transform: rotate(19deg);
 }
 
-/* Hover background */
+/* ============================= */
+/* HOVER BACKGROUND */
+/* ============================= */
+
 .project-fill {
   position: absolute;
   inset: 0;
@@ -158,6 +160,7 @@
   clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
 
   pointer-events: none;
+
   transition: opacity 0.3s ease;
 }
 
@@ -186,6 +189,7 @@
 .project-text {
   position: relative;
   z-index: 5;
+
   color: #050505;
 }
 
@@ -209,7 +213,7 @@
 }
 
 .project-text p {
-  color: #111;
+  color: #111111;
 
   font-size: 15px;
   letter-spacing: 1.5px;
@@ -254,7 +258,10 @@
   pointer-events: none;
 }
 
-/* 3D Modeling */
+/* ============================= */
+/* 3D MODELING ART */
+/* ============================= */
+
 .cube-art {
   right: -28px;
   top: -72px;
@@ -269,6 +276,7 @@
   inset: 38px;
 
   border: 3px solid currentColor;
+
   transform: rotate(45deg);
 }
 
@@ -278,10 +286,14 @@
   inset: 62px;
 
   border: 2px dashed currentColor;
+
   transform: rotate(45deg);
 }
 
-/* Art */
+/* ============================= */
+/* ART FACE */
+/* ============================= */
+
 .art-face {
   right: -25px;
   top: -42px;
@@ -324,28 +336,35 @@
   height: 4px;
 
   background: currentColor;
+
   transform: skewX(-26deg);
 }
 
 .s1 {
   right: 0;
   bottom: 32px;
+
   width: 250px;
 }
 
 .s2 {
   right: 22px;
   bottom: 54px;
+
   width: 210px;
 }
 
 .s3 {
   right: 60px;
   bottom: 76px;
+
   width: 160px;
 }
 
-/* Music */
+/* ============================= */
+/* MUSIC ART */
+/* ============================= */
+
 .music-art {
   right: -10px;
   top: -46px;
@@ -366,6 +385,7 @@
 
 .note {
   position: absolute;
+
   font-size: 50px;
 }
 
@@ -388,14 +408,18 @@
   width: 305px;
   height: 3px;
 
-  background: repeating-linear-gradient(
-    to right,
-    currentColor 0 5px,
-    transparent 5px 11px
-  );
+  background:
+    repeating-linear-gradient(
+      to right,
+      currentColor 0 5px,
+      transparent 5px 11px
+    );
 }
 
-/* Electrical */
+/* ============================= */
+/* ELECTRICAL ART */
+/* ============================= */
+
 .circuit-art {
   right: -60px;
   top: -26px;
@@ -418,7 +442,9 @@
 
 .trace {
   position: absolute;
+
   height: 3px;
+
   background: currentColor;
 }
 
@@ -433,35 +459,43 @@
   height: 13px;
 
   border: 3px solid currentColor;
-  background: #fff;
   border-radius: 50%;
+
+  background: #ffffff;
 }
 
 .t1 {
   left: 42px;
   top: 34px;
+
   width: 340px;
 }
 
 .t2 {
   left: 4px;
   top: 60px;
+
   width: 420px;
 }
 
 .t3 {
   left: 42px;
   top: 88px;
+
   width: 370px;
 }
 
 .t4 {
   left: 190px;
   top: 116px;
+
   width: 185px;
 }
 
-/* Computer Science */
+/* ============================= */
+/* COMPUTER SCIENCE ART */
+/* ============================= */
+
 .code-art {
   right: -62px;
   top: 15px;
@@ -489,14 +523,18 @@
   width: 235px;
   height: 92px;
 
-  background: repeating-linear-gradient(
-    to bottom,
-    currentColor 0 3px,
-    transparent 3px 13px
-  );
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      currentColor 0 3px,
+      transparent 3px 13px
+    );
 }
 
-/* AI */
+/* ============================= */
+/* AI ART */
+/* ============================= */
+
 .ai-art {
   right: -20px;
   top: -6px;
@@ -526,6 +564,7 @@
   height: 1px;
 
   background: currentColor;
+
   opacity: 0.75;
 
   transform-origin: left center;
@@ -642,6 +681,7 @@
 
   .project-box::before {
     height: 130px;
+
     transform: rotate(16deg);
   }
 
@@ -663,6 +703,7 @@
     right: -90px;
 
     opacity: 0.42;
+
     transform: scale(0.72);
     transform-origin: center right;
   }
@@ -674,43 +715,48 @@
 
 @media (max-width: 650px) {
   .projects-main {
-    padding: 105px 0 60px;
+    padding: 105px 0 72px;
   }
 
   .projects-title {
-    margin-bottom: 40px;
-    padding: 0 22px;
+    margin-bottom: 52px;
+    padding: 0 24px;
   }
 
   .projects-title h2 {
     font-size: 27px;
+    line-height: 1.1;
     letter-spacing: 7px;
   }
 
   .projects-title span {
-    width: 32px;
+    width: 34px;
     height: 2px;
+
     margin: 18px auto;
   }
 
   .projects-title p {
-    font-size: 12px;
-    line-height: 1.55;
-    letter-spacing: 0.6px;
+    max-width: 290px;
+    margin: 0 auto;
+
+    font-size: 11px;
+    line-height: 1.65;
+    letter-spacing: 0.5px;
   }
 
   .project-list {
-    width: calc(100% - 28px);
+    width: min(88%, 350px);
     margin: 0 auto;
 
-    gap: 20px;
+    gap: 34px;
   }
 
   .project-card {
-    padding-left: 34px;
+    width: 100%;
+    padding-left: 28px;
   }
 
-  /* Keep the project numbers visible */
   .project-index {
     display: block;
 
@@ -718,90 +764,105 @@
     top: 50%;
     z-index: 10;
 
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 11px;
+    font-weight: 900;
     line-height: 1;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 
     transform: translateY(-50%);
   }
 
-  /* Hide desktop timeline decorations */
   .project-index::before,
   .project-index::after {
     display: none;
   }
 
-  /* Shorter mobile boxes */
   .project-box {
-    --angle: 20px;
+    --angle: 22px;
 
-    height: 84px;
-    min-height: 84px;
+    width: 100%;
+    height: 116px;
+    min-height: 116px;
 
-    padding-left: 22px;
-    padding-right: 68px;
+    padding: 20px 66px 18px 26px;
+
+    align-items: center;
 
     overflow: hidden;
   }
 
   .project-box::before {
-    height: 90px;
-    transform: rotate(13deg);
+    height: 123px;
+
+    transform: rotate(12deg);
+  }
+
+  .project-text {
+    width: 100%;
+    max-width: 210px;
   }
 
   .small-line {
-    width: 18px;
+    width: 20px;
     height: 2px;
-    margin-bottom: 7px;
+
+    margin-bottom: 11px;
   }
 
   .project-text h3 {
-    margin-bottom: 5px;
+    max-width: 180px;
+    margin-bottom: 8px;
 
-    font-size: 11px;
-    line-height: 1.15;
-    letter-spacing: 1.3px;
+    font-size: 12px;
+    line-height: 1.18;
+    letter-spacing: 1.5px;
   }
 
   .project-text p {
+    max-width: 190px;
+
     font-size: 8px;
-    line-height: 1.3;
-    letter-spacing: 0.2px;
-    white-space: nowrap;
+    line-height: 1.4;
+    letter-spacing: 0.25px;
+
+    white-space: normal;
   }
 
-  /* Keep illustrations visible but subtle */
   .project-art {
-    right: -45px;
+    right: -42px;
 
-    opacity: 0.23;
-    transform: scale(0.34);
+    opacity: 0.18;
+
+    transform: scale(0.32);
     transform-origin: center right;
   }
 
   .cube-art {
-    top: -52px;
+    top: -38px;
   }
 
   .art-face {
-    top: -39px;
+    top: -25px;
   }
 
   .music-art {
-    top: -30px;
+    top: -19px;
   }
 
   .circuit-art {
-    top: -27px;
+    top: -16px;
   }
 
   .code-art {
-    top: -2px;
+    top: 6px;
   }
 
   .ai-art {
-    top: -14px;
+    top: -3px;
+  }
+
+  .project-card:active .project-fill {
+    opacity: 0.08;
   }
 }
 
@@ -809,40 +870,44 @@
 /* VERY SMALL PHONES */
 /* ============================= */
 
-@media (max-width: 390px) {
+@media (max-width: 380px) {
+  .projects-title {
+    padding: 0 18px;
+  }
+
   .projects-title h2 {
     font-size: 23px;
     letter-spacing: 5px;
   }
 
   .project-list {
-    width: calc(100% - 20px);
-    gap: 16px;
+    width: min(90%, 320px);
+    gap: 30px;
   }
 
   .project-card {
-    padding-left: 30px;
+    padding-left: 25px;
   }
 
   .project-box {
-    height: 78px;
-    min-height: 78px;
+    height: 108px;
+    min-height: 108px;
 
-    padding-left: 20px;
-    padding-right: 58px;
+    padding-left: 23px;
+    padding-right: 55px;
   }
 
   .project-box::before {
-    height: 84px;
+    height: 115px;
   }
 
   .project-index {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .project-text h3 {
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
   }
 
   .project-text p {
@@ -850,8 +915,10 @@
   }
 
   .project-art {
-    right: -55px;
-    opacity: 0.2;
-    transform: scale(0.3);
+    right: -52px;
+
+    opacity: 0.16;
+
+    transform: scale(0.28);
   }
 }

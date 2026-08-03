@@ -4,128 +4,207 @@
 }
 
 .ee-main {
+  position: relative;
+
   min-height: 100vh;
   padding: 150px 8vw 90px;
-  background:
-    linear-gradient(90deg, rgba(255,107,26,0.06) 0 1px, transparent 1px),
-    linear-gradient(rgba(0,0,0,0.035) 0 1px, transparent 1px),
-    #ffffff;
-  background-size: 82px 82px;
-  position: relative;
+
   overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 107, 26, 0.06) 0 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(0, 0, 0, 0.035) 0 1px,
+      transparent 1px
+    ),
+    #ffffff;
+
+  background-size: 82px 82px;
 }
 
 .ee-main::after {
   content: "";
+
   position: absolute;
   right: -40px;
   top: 150px;
+
   width: 390px;
   height: 390px;
+
   opacity: 0.11;
+
   pointer-events: none;
+
   background:
-    linear-gradient(#ff6b1a, #ff6b1a) 40px 40px / 260px 2px no-repeat,
-    linear-gradient(#ff6b1a, #ff6b1a) 80px 90px / 240px 2px no-repeat,
-    linear-gradient(#ff6b1a, #ff6b1a) 120px 140px / 220px 2px no-repeat,
-    linear-gradient(#ff6b1a, #ff6b1a) 160px 190px / 200px 2px no-repeat,
-    radial-gradient(circle, #ff6b1a 0 4px, transparent 5px) 290px 34px / 24px 24px no-repeat,
-    radial-gradient(circle, #ff6b1a 0 4px, transparent 5px) 315px 84px / 24px 24px no-repeat,
-    radial-gradient(circle, #ff6b1a 0 4px, transparent 5px) 340px 134px / 24px 24px no-repeat,
-    radial-gradient(circle, #ff6b1a 0 4px, transparent 5px) 360px 184px / 24px 24px no-repeat;
+    linear-gradient(#ff6b1a, #ff6b1a)
+      40px 40px / 260px 2px no-repeat,
+    linear-gradient(#ff6b1a, #ff6b1a)
+      80px 90px / 240px 2px no-repeat,
+    linear-gradient(#ff6b1a, #ff6b1a)
+      120px 140px / 220px 2px no-repeat,
+    linear-gradient(#ff6b1a, #ff6b1a)
+      160px 190px / 200px 2px no-repeat,
+    radial-gradient(
+      circle,
+      #ff6b1a 0 4px,
+      transparent 5px
+    )
+      290px 34px / 24px 24px no-repeat,
+    radial-gradient(
+      circle,
+      #ff6b1a 0 4px,
+      transparent 5px
+    )
+      315px 84px / 24px 24px no-repeat,
+    radial-gradient(
+      circle,
+      #ff6b1a 0 4px,
+      transparent 5px
+    )
+      340px 134px / 24px 24px no-repeat,
+    radial-gradient(
+      circle,
+      #ff6b1a 0 4px,
+      transparent 5px
+    )
+      360px 184px / 24px 24px no-repeat;
 }
 
-.back-link {
+/* ============================= */
+/* BACK LINK */
+/* ============================= */
+
+.electrical-page .back-link {
   display: inline-block;
+
   margin-bottom: 70px;
+
   color: #ff6b1a;
+
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
 .ee-title {
-  max-width: 760px;
-  margin-bottom: 54px;
   position: relative;
   z-index: 2;
+
+  max-width: 760px;
+  margin-bottom: 54px;
 }
 
-.section-label {
+.electrical-page .section-label {
+  margin-bottom: 22px;
+
   color: #ff6b1a;
+
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 22px;
 }
 
 .ee-title h2 {
+  margin-bottom: 28px;
+
   font-size: clamp(42px, 5vw, 78px);
+  font-weight: 900;
   line-height: 1.05;
   letter-spacing: 18px;
   text-transform: uppercase;
-  font-weight: 900;
-  margin-bottom: 28px;
 }
 
-.title-line {
+.ee-title .title-line {
   display: block;
+
   width: 110px;
   height: 3px;
-  background: #ff6b1a;
   margin-bottom: 28px;
+
+  background: #ff6b1a;
 }
 
 .ee-description {
-  color: #444;
+  color: #444444;
+
   font-size: 18px;
   line-height: 1.8;
   letter-spacing: 1.2px;
 }
 
+/* ============================= */
+/* PROJECT LIST */
+/* ============================= */
+
 .ee-list {
   position: relative;
   z-index: 2;
+
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .ee-item {
+  min-height: 96px;
+  padding: 20px 26px;
+
   display: grid;
-  grid-template-columns: 90px 1fr auto;
+  grid-template-columns: 90px minmax(0, 1fr) auto;
   gap: 24px;
   align-items: center;
-  min-height: 96px;
-  border: 1px solid rgba(0,0,0,0.25);
+
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-left: 5px solid #ff6b1a;
-  background: rgba(255,255,255,0.86);
-  padding: 20px 26px;
-  transition: 0.25s ease;
+
+  background: rgba(255, 255, 255, 0.86);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .ee-number {
   color: #ff6b1a;
+
   font-size: 30px;
   font-weight: 900;
   letter-spacing: 2px;
 }
 
 .ee-content h3 {
+  margin-bottom: 8px;
+
   font-size: 17px;
+  line-height: 1.25;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 8px;
 }
 
 .ee-content p {
-  color: #444;
+  margin-bottom: 12px;
+
+  color: #444444;
+
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 12px;
 }
+
+/* ============================= */
+/* TAGS */
+/* ============================= */
 
 .ee-tags {
   display: flex;
@@ -134,14 +213,21 @@
 }
 
 .ee-tags span {
-  border: 1px solid rgba(0,0,0,0.22);
   padding: 5px 9px;
+
+  border: 1px solid rgba(0, 0, 0, 0.22);
+
+  color: #333333;
+
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: #333;
 }
+
+/* ============================= */
+/* ACTIONS */
+/* ============================= */
 
 .ee-actions {
   display: flex;
@@ -149,8 +235,10 @@
 }
 
 .ee-actions a {
-  border: 1px solid #050505;
   padding: 10px 14px;
+
+  border: 1px solid #050505;
+
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 1.6px;
@@ -159,7 +247,11 @@
 
 .ee-item:hover {
   border-color: #ff6b1a;
+
   transform: translateX(6px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.05);
 }
 
 .ee-item:hover .ee-actions a {
@@ -167,122 +259,43 @@
   color: #ff6b1a;
 }
 
-@media (max-width: 850px) {
-  .ee-main {
-    padding: 135px 7vw 70px;
-  }
+/* ============================= */
+/* LOGIC PROJECT */
+/* ============================= */
 
-  .ee-title h2 {
-    font-size: 34px;
-    letter-spacing: 8px;
-  }
-
-  .ee-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .ee-actions {
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 1100px) {
-  main {
-    padding-top: 125px !important;
-  }
-
-  h2 {
-    letter-spacing: 10px !important;
-  }
-}
-
-@media (max-width: 850px) {
-  main {
-    padding: 110px 6vw 65px !important;
-  }
-
-  h2 {
-    font-size: 34px !important;
-    letter-spacing: 7px !important;
-    line-height: 1.15 !important;
-  }
-
-  .back-link {
-    margin-bottom: 40px !important;
-    font-size: 12px !important;
-  }
-
-  .section-label {
-    font-size: 11px !important;
-    letter-spacing: 2px !important;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  .ee-item,
-  .cs-item,
-  .track-item,
-  .model-item,
-  .art-card {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .ee-actions,
-  .cs-actions,
-  .track-actions,
-  .model-meta,
-  .track-meta,
-  .cs-meta {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-  }
-
-  .ee-actions a,
-  .cs-actions a,
-  .track-actions a,
-  .model-button {
-    width: 100%;
-    min-height: 44px;
-  }
-}
-
-
-
-/* Keep the expandable project consistent with the other EE cards */
 .logic-project {
   border: 1px solid rgba(0, 0, 0, 0.14);
   border-left: 5px solid #ff7214;
 }
 
-/* Report list is hidden initially */
+/* ============================= */
+/* REPORT LIST */
+/* ============================= */
+
 .report-list {
   display: none;
-  margin-top: 24px;
+
   max-width: 760px;
+  margin-top: 24px;
+
   border-top: 1px solid rgba(0, 0, 0, 0.14);
 }
 
-/* Open state */
 .report-list.show {
   display: block;
 }
 
-/* Individual report row */
 .report-list a {
-  display: grid;
-  grid-template-columns: 46px 1fr auto;
-  align-items: center;
-  gap: 14px;
-
   min-height: 48px;
   padding: 10px 4px;
 
-  color: #111;
-  text-decoration: none;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+
+  color: #111111;
+
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
   transition:
@@ -292,22 +305,24 @@
 }
 
 .report-list a:hover {
-  color: #ff7214;
   padding-left: 8px;
+
+  color: #ff7214;
+
   background: rgba(255, 114, 20, 0.035);
 }
 
-/* Replaces the emojis */
 .report-code {
+  width: 38px;
+  height: 22px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  width: 38px;
-  height: 22px;
-
   border: 1px solid rgba(0, 0, 0, 0.2);
-  color: #555;
+
+  color: #555555;
 
   font-size: 8px;
   font-weight: 800;
@@ -321,32 +336,34 @@
 }
 
 .report-open {
-  color: #777;
+  color: #777777;
+
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
-.report-list a:hover .report-code {
+.report-list a:hover .report-code,
+.report-list a:hover .report-open {
   color: #ff7214;
   border-color: #ff7214;
 }
 
-.report-list a:hover .report-open {
-  color: #ff7214;
-}
+/* ============================= */
+/* TOGGLE BUTTON */
+/* ============================= */
 
-/* Make toggle match the other View Report buttons */
 .toggle-reports {
   min-width: 125px;
   min-height: 36px;
   padding: 10px 14px;
 
-  background: transparent;
-  border: 1px solid #111;
+  border: 1px solid #111111;
   border-radius: 0;
-  color: #111;
+
+  background: transparent;
+  color: #111111;
 
   font-family: inherit;
   font-size: 10px;
@@ -363,37 +380,299 @@
 }
 
 .toggle-reports:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
+  border-color: #111111;
+
+  background: #111111;
+  color: #ffffff;
 }
 
+/* ============================= */
+/* TABLET */
+/* ============================= */
 
-
-
-@media (max-width: 700px) {
-  .logic-project .ee-actions {
-    width: 100%;
+@media (max-width: 1050px) {
+  .ee-main {
+    padding: 125px 6vw 80px;
   }
 
+  .ee-main::after {
+    right: -120px;
+    top: 170px;
+
+    transform: scale(0.78);
+    transform-origin: top right;
+  }
+
+  .ee-title {
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .ee-title h2 {
+    font-size: 44px;
+    line-height: 1.08;
+    letter-spacing: 10px;
+  }
+
+  .ee-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .ee-item {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 18px;
+
+    padding: 22px 24px;
+  }
+
+  .ee-actions {
+    grid-column: 2;
+
+    justify-content: flex-start;
+  }
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 650px) {
+  .electrical-page {
+    overflow-x: hidden;
+  }
+
+  .ee-main {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 105px 18px 65px;
+
+    overflow-x: hidden;
+
+    background-size: 52px 52px;
+  }
+
+  .ee-main::after {
+    right: -190px;
+    top: 185px;
+
+    opacity: 0.055;
+
+    transform: scale(0.55);
+    transform-origin: top right;
+  }
+
+  .electrical-page .back-link {
+    margin-bottom: 38px;
+
+    font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: 1.4px;
+  }
+
+  .ee-title {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 46px;
+  }
+
+  .electrical-page .section-label {
+    margin-bottom: 16px;
+
+    font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: 1.8px;
+  }
+
+  .ee-title h2 {
+    max-width: 100%;
+    margin-bottom: 22px;
+
+    font-size: clamp(30px, 9.2vw, 39px);
+    line-height: 1.08;
+    letter-spacing: 4px;
+
+    overflow-wrap: anywhere;
+  }
+
+  .ee-title .title-line {
+    width: 72px;
+    height: 3px;
+    margin: 0 0 22px;
+  }
+
+  .ee-description {
+    max-width: 100%;
+
+    color: #4a4a4a;
+
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+  }
+
+  .ee-list {
+    width: min(100%, 360px);
+    margin: 0 auto;
+
+    gap: 26px;
+  }
+
+  .ee-item {
+    width: 94%;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 22px 20px 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #ff6b1a;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.035);
+  }
+
+  .ee-item:hover {
+    transform: none;
+  }
+
+  .ee-number {
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .ee-content h3 {
+    max-width: 260px;
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 1.25;
+    letter-spacing: 2px;
+  }
+
+  .ee-content p {
+    max-width: 290px;
+    margin-bottom: 15px;
+
+    color: #4d4d4d;
+
+    font-size: 10px;
+    line-height: 1.65;
+    letter-spacing: 0.15px;
+  }
+
+  .ee-tags {
+    gap: 7px;
+  }
+
+  .ee-tags span {
+    padding: 5px 7px;
+
+    font-size: 7px;
+    line-height: 1.2;
+    letter-spacing: 0.9px;
+  }
+
+  .ee-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .ee-actions a,
   .toggle-reports {
     width: 100%;
+    min-height: 42px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 8px;
+    line-height: 1;
+    letter-spacing: 1.3px;
+    text-align: center;
+  }
+
+  .logic-project {
+    border-left-width: 4px;
   }
 
   .report-list {
-    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 17px;
   }
 
   .report-list a {
-    grid-template-columns: 42px 1fr;
+    min-height: 50px;
+    padding: 9px 3px;
+
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .report-code {
+    width: 34px;
+    height: 22px;
+
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  .report-name {
+    min-width: 0;
+
+    font-size: 9px;
+    line-height: 1.45;
+    letter-spacing: 0.2px;
+
+    overflow-wrap: anywhere;
   }
 
   .report-open {
     display: none;
   }
+}
 
-  .report-name {
-    font-size: 12px;
-    line-height: 1.45;
+/* ============================= */
+/* VERY SMALL PHONES */
+/* ============================= */
+
+@media (max-width: 380px) {
+  .ee-main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .ee-title h2 {
+    font-size: 29px;
+    letter-spacing: 3px;
+  }
+
+  .ee-list {
+    width: 100%;
+  }
+
+  .ee-item {
+    width: 96%;
+    padding: 19px 16px 18px;
+  }
+
+  .ee-content h3 {
+    font-size: 13px;
+    letter-spacing: 1.5px;
   }
 }
