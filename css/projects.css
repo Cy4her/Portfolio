@@ -56,7 +56,9 @@
 
 .project-card {
   position: relative;
+
   display: block;
+
   color: #050505;
 }
 
@@ -76,8 +78,8 @@
 
 .project-index::before {
   content: "";
-  position: absolute;
 
+  position: absolute;
   left: 50%;
   top: 52px;
 
@@ -92,6 +94,7 @@
 
 .project-index::after {
   content: "";
+
   display: block;
 
   width: 1px;
@@ -102,83 +105,91 @@
 }
 
 /* ============================= */
-/* PROJECT BOX */
+/* CLEAN ANGLED PROJECT BOX */
 /* ============================= */
 
 .project-box {
-  --angle: 50px;
+  --cut: 50px;
+  --border-size: 2px;
 
   position: relative;
   isolation: isolate;
 
   height: 145px;
-  padding-left: 78px;
+  padding: 24px 72px 24px 78px;
 
   display: flex;
   align-items: center;
 
-  overflow: visible;
-
-  background:
-    linear-gradient(#050505, #050505)
-      var(--angle) 0 / calc(100% - var(--angle)) 2px no-repeat,
-    linear-gradient(#050505, #050505)
-      0 100% / 100% 2px no-repeat,
-    linear-gradient(#050505, #050505)
-      100% 0 / 2px 100% no-repeat;
-}
-
-.project-box::before {
-  content: "";
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-  z-index: 4;
-
-  width: 2px;
-  height: 154px;
+  overflow: hidden;
 
   background: #050505;
 
-  transform-origin: bottom left;
-  transform: rotate(19deg);
+  clip-path: polygon(
+    var(--cut) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+/*
+  Inner white surface.
+  This creates one continuous clean border,
+  including the angled upper-left corner.
+*/
+
+.project-box::before {
+  content: "";
+
+  position: absolute;
+  inset: var(--border-size);
+  z-index: 0;
+
+  background: #ffffff;
+
+  clip-path: polygon(
+    calc(var(--cut) - var(--border-size)) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  pointer-events: none;
 }
 
 /* ============================= */
-/* HOVER BACKGROUND */
+/* HOVER FILL */
 /* ============================= */
 
 .project-fill {
   position: absolute;
-  inset: 0;
-  z-index: 2;
+  inset: var(--border-size);
+  z-index: 1;
 
   background: currentColor;
-  opacity: 0;
 
-  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(
+    calc(var(--cut) - var(--border-size)) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  opacity: 0;
 
   pointer-events: none;
 
   transition: opacity 0.3s ease;
 }
 
-.project-card:hover .project-fill {
+.project-card:hover .project-fill,
+.project-card:focus-visible .project-fill {
   opacity: 0.08;
 }
 
-.project-card:hover .project-box {
-  background:
-    linear-gradient(currentColor, currentColor)
-      var(--angle) 0 / calc(100% - var(--angle)) 2px no-repeat,
-    linear-gradient(currentColor, currentColor)
-      0 100% / 100% 2px no-repeat,
-    linear-gradient(currentColor, currentColor)
-      100% 0 / 2px 100% no-repeat;
-}
-
-.project-card:hover .project-box::before {
+.project-card:hover .project-box,
+.project-card:focus-visible .project-box {
   background: currentColor;
 }
 
@@ -188,7 +199,7 @@
 
 .project-text {
   position: relative;
-  z-index: 5;
+  z-index: 3;
 
   color: #050505;
 }
@@ -253,7 +264,7 @@
 
 .project-art {
   position: absolute;
-  z-index: 6;
+  z-index: 4;
 
   pointer-events: none;
 }
@@ -272,6 +283,7 @@
 
 .cube-art::before {
   content: "";
+
   position: absolute;
   inset: 38px;
 
@@ -282,6 +294,7 @@
 
 .cube-art::after {
   content: "";
+
   position: absolute;
   inset: 62px;
 
@@ -450,8 +463,8 @@
 
 .trace::after {
   content: "";
-  position: absolute;
 
+  position: absolute;
   right: -9px;
   top: -6px;
 
@@ -555,8 +568,8 @@
 
 .node::after {
   content: "";
-  position: absolute;
 
+  position: absolute;
   left: 9px;
   top: 9px;
 
@@ -650,6 +663,7 @@
 
   .project-list {
     width: min(760px, 82vw);
+
     gap: 44px;
   }
 
@@ -673,16 +687,11 @@
   }
 
   .project-box {
-    --angle: 38px;
+    --cut: 40px;
+    --border-size: 2px;
 
     height: 122px;
-    padding-left: 48px;
-  }
-
-  .project-box::before {
-    height: 130px;
-
-    transform: rotate(16deg);
+    padding: 20px 64px 20px 52px;
   }
 
   .small-line {
@@ -709,9 +718,8 @@
   }
 }
 
-
 /* ============================= */
-/* PROJECTS PAGE — MOBILE */
+/* MOBILE */
 /* ============================= */
 
 @media (max-width: 650px) {
@@ -733,6 +741,7 @@
   .projects-title span {
     width: 34px;
     height: 2px;
+
     margin: 18px auto;
   }
 
@@ -745,22 +754,17 @@
     letter-spacing: 0.45px;
   }
 
-  /*
-    Slightly wider cards,
-    a little shorter,
-    and more balanced spacing.
-  */
-
   .project-list {
-    width: min(94%, 390px);
+    width: min(94%, 400px);
     margin: 0 auto;
 
-    gap: 28px;
+    gap: 30px;
   }
 
   .project-card {
     width: 100%;
-    padding-left: 34px;
+
+    padding-left: 38px;
   }
 
   .project-index {
@@ -770,7 +774,7 @@
     top: 50%;
     z-index: 10;
 
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 900;
     line-height: 1;
     letter-spacing: 0.5px;
@@ -784,24 +788,19 @@
   }
 
   .project-box {
-    --angle: 22px;
+    --cut: 48px;
+    --border-size: 2px;
 
     width: 100%;
-    height: 98px;
-    min-height: 98px;
+    height: 96px;
+    min-height: 96px;
 
-    padding: 15px 70px 14px 28px;
+    padding: 14px 70px 13px 40px;
 
     display: flex;
     align-items: center;
 
     overflow: hidden;
-  }
-
-  .project-box::before {
-    height: 105px;
-
-    transform: rotate(12deg);
   }
 
   .project-text {
@@ -826,7 +825,7 @@
   }
 
   .project-text p {
-    max-width: 205px;
+    max-width: 210px;
 
     font-size: 9px;
     line-height: 1.35;
@@ -888,28 +887,27 @@
   }
 
   .project-list {
-    width: min(95%, 350px);
-    gap: 25px;
+    width: min(95%, 355px);
+
+    gap: 27px;
   }
 
   .project-card {
-    padding-left: 31px;
-  }
-
-  .project-box {
-    height: 92px;
-    min-height: 92px;
-
-    padding-left: 24px;
-    padding-right: 60px;
-  }
-
-  .project-box::before {
-    height: 99px;
+    padding-left: 34px;
   }
 
   .project-index {
-    font-size: 13px;
+    font-size: 14px;
+  }
+
+  .project-box {
+    --cut: 43px;
+
+    height: 90px;
+    min-height: 90px;
+
+    padding-left: 37px;
+    padding-right: 58px;
   }
 
   .project-text h3 {
