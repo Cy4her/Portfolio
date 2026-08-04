@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Music | Portfolio</title>
 
@@ -13,12 +18,19 @@
 <body class="music-page">
 
   <header class="navbar nav-light">
+
     <a href="../index.html" class="brand">
-      <img src="../assets/Logo.png" alt="Logo" />
+
+      <img
+        src="../assets/Logo.png"
+        alt="Portfolio logo"
+      />
+
       <div>
         <h1>YOUR NAME</h1>
         <p>ELECTRICAL ENGINEERING</p>
       </div>
+
     </a>
 
     <nav>
@@ -28,157 +40,454 @@
       <a href="resume.html">Resume</a>
       <a href="contact.html">Contact</a>
     </nav>
+
   </header>
 
   <main class="music-main">
 
-    <a href="projects.html" class="back-link">← Back to Projects</a>
+    <a href="projects.html" class="back-link">
+      ← Back to Projects
+    </a>
 
     <section class="music-title">
-      <p class="section-label">03 / Project Category</p>
+
+      <p class="section-label">
+        03 / Project Category
+      </p>
 
       <h2>Music</h2>
 
       <span class="title-line"></span>
 
-      <p>
-        A collection of original compositions, soundtracks,
-        piano pieces, and experimental music.
+      <p class="music-description">
+        A small collection of original compositions,
+        soundtracks, and musical experiments.
       </p>
+
     </section>
 
     <section class="music-list">
 
-      <article class="track-item">
-        <span class="track-number">01</span>
+      <!-- =================================
+           TRACK 01
+           ================================= -->
 
-        <div class="album-art purple-cover">♪</div>
+      <article class="track-card">
 
-        <div class="track-info">
-          <h3>Midnight Rain</h3>
-          <p>Ambient piano piece composed for relaxation.</p>
+        <span class="track-number">
+          01
+        </span>
+
+        <div class="album-cover cover-purple">
+
+          <img
+            src="./Music%20Projects/Zeros-Theme-Cover.jpg"
+            alt="Cover artwork for Zero's Theme"
+            loading="lazy"
+            draggable="false"
+          />
+
+          <span class="cover-symbol" aria-hidden="true">
+            ♪
+          </span>
+
+          <span class="cover-label">
+            Original Soundtrack
+          </span>
+
         </div>
 
-        <div class="track-meta">
-          <span>Piano</span>
-          <span>2:43</span>
-          <span>2026</span>
+        <div class="track-content">
+
+          <div class="track-heading">
+
+            <div>
+              <p class="track-category">
+                Original Soundtrack
+              </p>
+
+              <h3>
+                Zero's Theme
+              </h3>
+            </div>
+
+            <span class="file-format">
+              WAV
+            </span>
+
+          </div>
+
+          <p class="track-description">
+            An original theme composed as part of my personal
+            soundtrack collection.
+          </p>
+
+          <audio
+            class="track-audio"
+            preload="none"
+            controlslist="nodownload noplaybackrate"
+            disablepictureinpicture
+          >
+            <source
+              src="./Music%20Projects/Zero%27s%20Theme.wav"
+              type="audio/wav"
+            />
+          </audio>
+
+          <div class="custom-player">
+
+            <button
+              class="play-button"
+              type="button"
+              aria-label="Play Zero's Theme"
+            >
+              <span class="play-icon" aria-hidden="true">
+                ▶
+              </span>
+            </button>
+
+            <div class="player-main">
+
+              <div
+                class="progress-bar"
+                role="slider"
+                aria-label="Zero's Theme progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                tabindex="0"
+              >
+                <span class="progress-buffer"></span>
+                <span class="progress-fill"></span>
+                <span class="progress-handle"></span>
+              </div>
+
+              <div class="player-lower-row">
+
+                <div class="player-time">
+                  <span class="current-time">0:00</span>
+                  <span class="time-divider">/</span>
+                  <span class="duration">--:--</span>
+                </div>
+
+                <div class="volume-control">
+
+                  <button
+                    class="mute-button"
+                    type="button"
+                    aria-label="Mute Zero's Theme"
+                  >
+                    <span class="volume-icon" aria-hidden="true">
+                      🔊
+                    </span>
+                  </button>
+
+                  <input
+                    class="volume-slider"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                    aria-label="Volume for Zero's Theme"
+                  />
+
+                  <span class="volume-value">
+                    80%
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="track-actions">
-          <a href="#">▶ Play</a>
-          <a href="#">Notes</a>
-        </div>
       </article>
 
-      <article class="track-item">
-        <span class="track-number">02</span>
+      <!-- =================================
+           TRACK 02
+           Replace filenames and information
+           ================================= -->
 
-        <div class="album-art blue-cover">♫</div>
+      <article class="track-card">
 
-        <div class="track-info">
-          <h3>Echoes</h3>
-          <p>Cinematic orchestral composition.</p>
+        <span class="track-number">
+          02
+        </span>
+
+        <div class="album-cover cover-blue">
+
+          <img
+            src="./Music%20Projects/Track-Two-Cover.jpg"
+            alt="Cover artwork for track two"
+            loading="lazy"
+            draggable="false"
+          />
+
+          <span class="cover-symbol" aria-hidden="true">
+            ♫
+          </span>
+
+          <span class="cover-label">
+            Cinematic
+          </span>
+
         </div>
 
-        <div class="track-meta">
-          <span>Orchestral</span>
-          <span>5:18</span>
-          <span>2025</span>
+        <div class="track-content">
+
+          <div class="track-heading">
+
+            <div>
+              <p class="track-category">
+                Cinematic
+              </p>
+
+              <h3>
+                You're not alone
+              </h3>
+            </div>
+
+            <span class="file-format">
+              MP3
+            </span>
+
+          </div>
+
+          <p class="track-description">
+            Replace this description with information about your
+            second composition.
+          </p>
+
+          <audio
+            class="track-audio"
+            preload="none"
+            controlslist="nodownload noplaybackrate"
+            disablepictureinpicture
+          >
+            <source
+              src="./Music Projects/You're not alone.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+
+          <div class="custom-player">
+
+            <button
+              class="play-button"
+              type="button"
+              aria-label="Play track two"
+            >
+              <span class="play-icon" aria-hidden="true">
+                ▶
+              </span>
+            </button>
+
+            <div class="player-main">
+
+              <div
+                class="progress-bar"
+                role="slider"
+                aria-label="Track two progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                tabindex="0"
+              >
+                <span class="progress-buffer"></span>
+                <span class="progress-fill"></span>
+                <span class="progress-handle"></span>
+              </div>
+
+              <div class="player-lower-row">
+
+                <div class="player-time">
+                  <span class="current-time">0:00</span>
+                  <span class="time-divider">/</span>
+                  <span class="duration">--:--</span>
+                </div>
+
+                <div class="volume-control">
+
+                  <button
+                    class="mute-button"
+                    type="button"
+                    aria-label="Mute track two"
+                  >
+                    <span class="volume-icon" aria-hidden="true">
+                      🔊
+                    </span>
+                  </button>
+
+                  <input
+                    class="volume-slider"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                    aria-label="Volume for track two"
+                  />
+
+                  <span class="volume-value">
+                    80%
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="track-actions">
-          <a href="#">▶ Play</a>
-          <a href="#">Score</a>
-        </div>
       </article>
 
-      <article class="track-item">
-        <span class="track-number">03</span>
+      <!-- =================================
+           TRACK 03
+           Replace filenames and information
+           ================================= -->
 
-        <div class="album-art red-cover">♬</div>
+      <article class="track-card">
 
-        <div class="track-info">
-          <h3>Lost Memory</h3>
-          <p>Original lo-fi beat inspired by memories.</p>
+        <span class="track-number">
+          03
+        </span>
+
+        <div class="album-cover cover-red">
+
+          <img
+            src="./Music%20Projects/Track-Three-Cover.jpg"
+            alt="Cover artwork for track three"
+            loading="lazy"
+            draggable="false"
+          />
+
+          <span class="cover-symbol" aria-hidden="true">
+            ♬
+          </span>
+
+          <span class="cover-label">
+            Experimental
+          </span>
+
         </div>
 
-        <div class="track-meta">
-          <span>Lo-Fi</span>
-          <span>3:26</span>
-          <span>2025</span>
+        <div class="track-content">
+
+          <div class="track-heading">
+
+            <div>
+              <p class="track-category">
+                Experimental
+              </p>
+
+              <h3>
+                Leave room for wonder
+              </h3>
+            </div>
+
+            <span class="file-format">
+              WAV
+            </span>
+
+          </div>
+
+          <p class="track-description">
+            Replace this description with information about your
+            third composition.
+          </p>
+
+          <audio
+            class="track-audio"
+            preload="none"
+            controlslist="nodownload noplaybackrate"
+            disablepictureinpicture
+          >
+            <source
+              src="./Music Projects/Leave room for wonder.mp3"
+              type="audio/wav"
+            />
+          </audio>
+
+          <div class="custom-player">
+
+            <button
+              class="play-button"
+              type="button"
+              aria-label="Play track three"
+            >
+              <span class="play-icon" aria-hidden="true">
+                ▶
+              </span>
+            </button>
+
+            <div class="player-main">
+
+              <div
+                class="progress-bar"
+                role="slider"
+                aria-label="Track three progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                tabindex="0"
+              >
+                <span class="progress-buffer"></span>
+                <span class="progress-fill"></span>
+                <span class="progress-handle"></span>
+              </div>
+
+              <div class="player-lower-row">
+
+                <div class="player-time">
+                  <span class="current-time">0:00</span>
+                  <span class="time-divider">/</span>
+                  <span class="duration">--:--</span>
+                </div>
+
+                <div class="volume-control">
+
+                  <button
+                    class="mute-button"
+                    type="button"
+                    aria-label="Mute track three"
+                  >
+                    <span class="volume-icon" aria-hidden="true">
+                      🔊
+                    </span>
+                  </button>
+
+                  <input
+                    class="volume-slider"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.8"
+                    aria-label="Volume for track three"
+                  />
+
+                  <span class="volume-value">
+                    80%
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="track-actions">
-          <a href="#">▶ Play</a>
-          <a href="#">Info</a>
-        </div>
-      </article>
-
-      <article class="track-item">
-        <span class="track-number">04</span>
-
-        <div class="album-art green-cover">♩</div>
-
-        <div class="track-info">
-          <h3>Forest Whispers</h3>
-          <p>Ambient atmosphere with natural sounds.</p>
-        </div>
-
-        <div class="track-meta">
-          <span>Ambient</span>
-          <span>4:07</span>
-          <span>2024</span>
-        </div>
-
-        <div class="track-actions">
-          <a href="#">▶ Play</a>
-          <a href="#">Notes</a>
-        </div>
-      </article>
-
-      <article class="track-item">
-        <span class="track-number">05</span>
-
-        <div class="album-art dark-cover">✦</div>
-
-        <div class="track-info">
-          <h3>Beyond The Stars</h3>
-          <p>Electronic music with atmospheric pads.</p>
-        </div>
-
-        <div class="track-meta">
-          <span>Electronic</span>
-          <span>4:56</span>
-          <span>2024</span>
-        </div>
-
-        <div class="track-actions">
-          <a href="#">▶ Play</a>
-          <a href="#">Download</a>
-        </div>
-      </article>
-
-      <article class="track-item">
-        <span class="track-number">06</span>
-
-        <div class="album-art gold-cover">♭</div>
-
-        <div class="track-info">
-          <h3>Fading Light</h3>
-          <p>Solo piano piece written at midnight.</p>
-        </div>
-
-        <div class="track-meta">
-          <span>Piano</span>
-          <span>2:59</span>
-          <span>2024</span>
-        </div>
-
-        <div class="track-actions">
-          <a href="#">▶ Play</a>
-          <a href="#">Notes</a>
-        </div>
       </article>
 
     </section>
@@ -186,5 +495,7 @@
   </main>
 
   <script src="../js/main.js"></script>
+  <script src="../js/music.js"></script>
+
 </body>
 </html>
