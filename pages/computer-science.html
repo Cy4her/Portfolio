@@ -11,15 +11,34 @@
 
   <title>Computer Science | Portfolio</title>
 
-  <link rel="stylesheet" href="../css/global.css" />
-  <link rel="stylesheet" href="../css/computer-science.css" />
+  <!--
+    Version numbers force GitHub Pages and the browser
+    to load the newest CSS instead of an older cached copy.
+  -->
+  <link
+    rel="stylesheet"
+    href="../css/global.css?v=4"
+  />
+
+  <link
+    rel="stylesheet"
+    href="../css/computer-science.css?v=4"
+  />
 </head>
 
 <body class="cs-page">
 
+  <!-- =============================
+       NAVIGATION
+       ============================= -->
+
   <header class="navbar nav-light">
 
-    <a href="../index.html" class="brand">
+    <a
+      href="../index.html"
+      class="brand"
+    >
+
       <img
         src="../assets/Logo.png"
         alt="Portfolio logo"
@@ -29,17 +48,39 @@
         <h1>YOUR NAME</h1>
         <p>ELECTRICAL ENGINEERING</p>
       </div>
+
     </a>
 
     <nav>
-      <a href="../index.html">Home</a>
-      <a class="active" href="projects.html">Projects</a>
-      <a href="about.html">About Me</a>
-      <a href="resume.html">Resume</a>
-      <a href="contact.html">Contact</a>
+      <a href="../index.html">
+        Home
+      </a>
+
+      <a
+        class="active"
+        href="projects.html"
+      >
+        Projects
+      </a>
+
+      <a href="about.html">
+        About Me
+      </a>
+
+      <a href="resume.html">
+        Resume
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
     </nav>
 
   </header>
+
+  <!-- =============================
+       MAIN CONTENT
+       ============================= -->
 
   <main class="cs-main">
 
@@ -50,10 +91,14 @@
       ← Back to Projects
     </a>
 
+    <!-- =============================
+         PAGE TITLE
+         ============================= -->
+
     <section class="cs-title">
 
       <p class="section-label">
-        02 / Project Category
+        05 / Project Category
       </p>
 
       <h2>
@@ -69,6 +114,10 @@
       </p>
 
     </section>
+
+    <!-- =============================
+         PROJECT 01
+         ============================= -->
 
     <section class="project-card">
 
@@ -87,32 +136,56 @@
         </h3>
 
         <p class="project-description">
-          A Java program that generates random arrays, sorts them using
-          multiple algorithms, and displays the final result and comparison
-          count.
+          A Java program that generates randomized integer arrays,
+          sorts them using multiple algorithms, and displays the
+          original array, sorted result, selected algorithm, and
+          comparison count.
         </p>
 
         <div class="project-tags">
-          <span>Java</span>
-          <span>Algorithms</span>
-          <span>OOP</span>
-          <span>Console</span>
+
+          <span>
+            Java
+          </span>
+
+          <span>
+            Algorithms
+          </span>
+
+          <span>
+            OOP
+          </span>
+
+          <span>
+            Console
+          </span>
+
         </div>
 
         <div class="project-details">
 
           <div>
-            <span>Algorithms</span>
+
+            <span>
+              Algorithms
+            </span>
+
             <strong>
               Selection, Insertion, Merge, Quick
             </strong>
+
           </div>
 
           <div>
-            <span>Status</span>
+
+            <span>
+              Status
+            </span>
+
             <strong>
               Completed
             </strong>
+
           </div>
 
         </div>
@@ -124,7 +197,10 @@
           rel="noopener noreferrer"
         >
           View Java Source
-          <span aria-hidden="true">↗</span>
+
+          <span aria-hidden="true">
+            ↗
+          </span>
         </a>
 
       </div>
@@ -133,7 +209,11 @@
 
   </main>
 
-  <script src="../js/main.js"></script>
+  <!--
+    Version number also prevents an older cached JavaScript file
+    from being reused.
+  -->
+  <script src="../js/main.js?v=4"></script>
 
 </body>
 </html>
