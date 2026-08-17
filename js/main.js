@@ -83,3 +83,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+/* =========================================
+   DIGITAL LOGIC REPORT TOGGLE
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const reportButtons =
+    document.querySelectorAll(".toggle-reports");
+
+  reportButtons.forEach((button) => {
+    const reportListId =
+      button.getAttribute("aria-controls");
+
+    const reportList =
+      document.getElementById(reportListId);
+
+    if (!reportList) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      const isOpen =
+        reportList.classList.toggle("show");
+
+      button.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      button.textContent =
+        isOpen
+          ? "Hide Reports"
+          : "View Reports";
+    });
+  });
+});
