@@ -5,8 +5,9 @@
 :root {
   --black: #050505;
   --white: #ffffff;
-  --gray: #777777;
+  --gray: #777;
   --line: rgba(0, 0, 0, 0.18);
+
   --gold: #d99a32;
   --blue: #246bff;
   --red: #d83333;
@@ -20,21 +21,19 @@
 
 * {
   box-sizing: border-box;
+
   margin: 0;
   padding: 0;
 }
 
 html {
-  width: 100%;
   min-height: 100%;
-  overflow-x: hidden;
+
   scroll-behavior: smooth;
 }
 
 body {
-  width: 100%;
   min-height: 100%;
-  overflow-x: hidden;
 
   font-family: "Inter", sans-serif;
 
@@ -42,38 +41,36 @@ body {
   color: var(--black);
 
   opacity: 0;
-  transition: opacity 0.4s ease;
+
+  transition:
+    opacity 0.45s ease;
 }
 
 body.loaded {
   opacity: 1;
 }
 
-body.menu-open,
-body.lightbox-open {
+body.menu-open {
   overflow: hidden;
 }
 
-img,
-video,
-canvas,
-model-viewer {
+img {
   display: block;
+
   max-width: 100%;
 }
 
 a {
   color: inherit;
+
   text-decoration: none;
 }
 
 button,
-a {
+input,
+textarea,
+select {
   font-family: inherit;
-}
-
-button {
-  border-radius: 0;
 }
 
 a,
@@ -93,43 +90,53 @@ button {
 
 .navbar {
   position: fixed;
+
   top: 0;
   left: 0;
+
   z-index: 100;
 
   width: 100%;
-  max-width: 100vw;
   height: 112px;
+
   padding: 30px 56px;
 
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 }
 
 .brand {
   position: relative;
-  z-index: 310;
 
-  min-width: 360px;
+  z-index: 300;
 
   display: flex;
+
   align-items: center;
+
   gap: 18px;
+
+  min-width: 360px;
 }
 
 .brand img {
   width: 64px;
   height: 64px;
 
-  object-fit: contain;
   flex-shrink: 0;
+
+  object-fit: contain;
 }
 
 .brand h1 {
   font-size: 24px;
+
   font-weight: 600;
+
   letter-spacing: 10px;
+
   white-space: nowrap;
 }
 
@@ -137,14 +144,18 @@ button {
   margin-top: 7px;
 
   font-size: 14px;
+
   letter-spacing: 5px;
+
   white-space: nowrap;
 }
 
 .navbar nav {
   display: flex;
+
   align-items: center;
   justify-content: flex-end;
+
   gap: clamp(28px, 4vw, 54px);
 
   white-space: nowrap;
@@ -156,7 +167,9 @@ button {
   padding-bottom: 12px;
 
   font-size: 14px;
+
   letter-spacing: 4px;
+
   text-transform: uppercase;
 }
 
@@ -164,6 +177,7 @@ button {
   content: "";
 
   position: absolute;
+
   left: 0;
   bottom: 0;
 
@@ -181,11 +195,11 @@ button {
 }
 
 .nav-dark {
-  color: #ffffff;
+  color: white;
 }
 
 .nav-light {
-  color: #000000;
+  color: black;
 
   background: rgba(255, 255, 255, 0.88);
 
@@ -198,18 +212,18 @@ button {
 
 .menu-toggle {
   position: relative;
-  z-index: 310;
+
+  z-index: 300;
 
   display: none;
 
   width: 44px;
   height: 44px;
 
-  flex-shrink: 0;
-
   border: 1px solid currentColor;
 
   background: transparent;
+
   color: inherit;
 
   cursor: pointer;
@@ -217,6 +231,7 @@ button {
 
 .menu-toggle span {
   position: absolute;
+
   left: 10px;
 
   width: 22px;
@@ -244,6 +259,7 @@ button {
 
 .navbar.menu-open .menu-toggle span:nth-child(1) {
   top: 21px;
+
   transform: rotate(45deg);
 }
 
@@ -253,6 +269,7 @@ button {
 
 .navbar.menu-open .menu-toggle span:nth-child(3) {
   top: 21px;
+
   transform: rotate(-45deg);
 }
 
@@ -268,7 +285,9 @@ button {
 
 .page-title h2 {
   font-size: 38px;
+
   font-weight: 700;
+
   letter-spacing: 18px;
 }
 
@@ -279,23 +298,28 @@ button {
 .title-line {
   width: 48px;
   height: 2px;
+
   margin: 28px auto;
 
   background: currentColor;
 }
 
-/* ============================= */
-/* TABLET */
-/* ============================= */
+/* ================================================= */
+/* LAPTOP */
+/* 1101px - 1400px */
+/* ================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1400px) and (min-width: 1101px) {
   .navbar {
-    height: 92px;
-    padding: 22px 30px;
+    height: 96px;
+
+    padding: 22px 36px;
   }
 
   .brand {
     min-width: auto;
+
+    gap: 14px;
   }
 
   .brand img {
@@ -305,21 +329,98 @@ button {
 
   .brand h1 {
     font-size: 18px;
+
+    letter-spacing: 6px;
+  }
+
+  .brand p {
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 2.8px;
+  }
+
+  .navbar nav {
+    gap: clamp(20px, 2.4vw, 34px);
+  }
+
+  .navbar nav a {
+    padding-bottom: 9px;
+
+    font-size: 10px;
+
+    letter-spacing: 2.2px;
+  }
+
+  .page-title {
+    padding-top: 155px;
+  }
+
+  .page-title h2 {
+    font-size: 34px;
+
+    letter-spacing: 11px;
+  }
+
+  .page-title p {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .title-line {
+    margin: 24px auto;
+  }
+}
+
+/* ================================================= */
+/* TABLET */
+/* 651px - 1100px */
+/* ================================================= */
+
+@media (max-width: 1100px) and (min-width: 851px) {
+  html {
+    font-size: 92%;
+  }
+
+  .navbar {
+    height: 92px;
+
+    padding: 22px 30px;
+  }
+
+  .brand {
+    min-width: auto;
+
+    gap: 12px;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand h1 {
+    font-size: 18px;
+
     letter-spacing: 6px;
   }
 
   .brand p {
     font-size: 11px;
+
     letter-spacing: 2px;
   }
 
   .navbar nav {
-    gap: 28px;
+    gap: 24px;
   }
 
   .navbar nav a {
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 11px;
+
+    letter-spacing: 1.8px;
   }
 
   .page-title {
@@ -328,38 +429,38 @@ button {
 
   .page-title h2 {
     font-size: clamp(30px, 5vw, 44px);
+
     letter-spacing: 8px;
   }
 
   .page-title p {
     font-size: 14px;
+
     line-height: 1.6;
   }
 }
 
-/* ============================= */
+/* ================================================= */
 /* MOBILE NAVIGATION */
-/* Fade instead of sliding */
-/* ============================= */
+/* <= 850px */
+/* ================================================= */
 
 @media (max-width: 850px) {
   .navbar {
     height: 78px;
+
     padding: 16px 24px;
   }
 
   .brand {
     min-width: auto;
+
     gap: 12px;
   }
 
   .brand img {
-    display: block;
-
     width: 46px;
     height: 46px;
-
-    object-fit: contain;
   }
 
   .brand h1,
@@ -373,65 +474,52 @@ button {
 
   .navbar nav {
     position: fixed;
+
     inset: 0;
+
     z-index: 250;
 
-    width: 100%;
-    height: 100dvh;
-
-    padding: 100px 24px 40px;
-
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    gap: 34px;
 
-    white-space: normal;
+    gap: 42px;
 
-    background: rgba(5, 5, 5, 0.97);
-    color: #ffffff;
+    background: rgba(5, 5, 5, 0.96);
 
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    color: white;
 
-    /*
-      No translateX here.
-      The menu fades instead of sliding.
-    */
-    transform: scale(1.015);
+    transform: translateX(100%);
 
     transition:
-      opacity 0.25s ease,
-      visibility 0.25s ease,
-      transform 0.25s ease;
+      transform 0.35s ease;
   }
 
   .navbar.menu-open nav {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    transform: scale(1);
+    transform: translateX(0);
   }
 
   .navbar.menu-open {
-    color: #ffffff;
+    color: white;
+
     background: transparent;
+
     backdrop-filter: none;
   }
 
   .navbar nav a {
-    width: auto;
-    padding-bottom: 9px;
+    padding-bottom: 10px;
 
-    color: #ffffff;
+    color: white;
 
-    font-size: 18px;
+    font-size: 22px;
+
     font-weight: 500;
-    letter-spacing: 5px;
-    text-align: center;
+
+    letter-spacing: 6px;
   }
 
   .page-title {
@@ -440,30 +528,58 @@ button {
 
   .page-title h2 {
     font-size: 30px;
+
     letter-spacing: 8px;
   }
 }
 
-/* ============================= */
+/* ================================================= */
 /* PHONE */
-/* ============================= */
+/* <= 650px */
+/* ================================================= */
 
 @media (max-width: 650px) {
+  html {
+    font-size: 100%;
+  }
+
   .navbar {
-    padding: 16px 20px;
+    height: 72px;
+
+    padding: 14px 20px;
+  }
+
+  .brand {
+    gap: 10px;
   }
 
   .brand img {
-    width: 44px;
-    height: 44px;
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .menu-toggle span {
+    left: 9px;
+
+    width: 22px;
   }
 
   .navbar nav {
-    gap: 25px;
+    gap: 34px;
   }
 
   .navbar nav a {
-    font-size: 16px;
+    font-size: 18px;
+
     letter-spacing: 4px;
   }
 
@@ -473,28 +589,58 @@ button {
 
   .page-title h2 {
     font-size: clamp(24px, 7vw, 32px);
+
     line-height: 1.15;
+
     letter-spacing: 5px;
   }
 
   .page-title p {
     font-size: 12px;
+
     line-height: 1.5;
+
     letter-spacing: 0.3px;
   }
 
   .title-line {
     width: 30px;
+
+    margin: 23px auto;
   }
 
   .section-label,
   .about-label,
   .focus-label {
     font-size: 10px;
+
     letter-spacing: 2px;
   }
 
   .back-link {
     font-size: 11px;
+  }
+}
+
+/* ================================================= */
+/* VERY SMALL PHONES */
+/* <= 380px */
+/* ================================================= */
+
+@media (max-width: 380px) {
+  .navbar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .brand img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar nav a {
+    font-size: 16px;
+
+    letter-spacing: 3px;
   }
 }
